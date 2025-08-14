@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aetherix AI Solutions: Transformación digital e inteligencia artificial para optimizar operaciones empresariales en México."
+    />
+    <title>Aetherix AI Solutions | Inteligencia Artificial para Negocios</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aetherix.mx/" />
+    <meta
+      property="og:title"
+      content="Aetherix AI Solutions | IA que Acelera Resultados"
+    />
+    <meta
+      property="og:description"
+      content="Soluciones de IA para monitoreo de EPP, mantenimiento predictivo y automatización de procesos."
+    />
+    <meta
+      property="og:image"
+      content="https://www.aetherix.mx/img/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.aetherix.mx/" />
+    <meta
+      property="twitter:title"
+      content="Aetherix AI Solutions | IA que Acelera Resultados"
+    />
+    <meta
+      property="twitter:description"
+      content="Soluciones de IA para monitoreo de EPP, mantenimiento predictivo y automatización de procesos."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.aetherix.mx/img/og-image.jpg"
+    />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Aetherix AI Solutions",
+        "url": "https://www.aetherix.mx/",
+        "logo": "https://www.aetherix.mx/img/logo.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+52-811-066-6514",
+          "contactType": "Servicio al cliente",
+          "email": "info@aetherix.mx"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "",
+          "addressLocality": "Monterrey",
+          "addressRegion": "Nuevo León",
+          "postalCode": "",
+          "addressCountry": "MX"
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/01_Aetherix_Simoblo-Verde.png"
+    />
+
+    <style>
+      /* Variables CSS */
+      :root {
+        /* Paleta de marca */
+        --brand-ink: #10232a;
+        --brand-mint: #1ce080;
+        --brand-blue: #0802ea;
+        --brand-purple: #5917d2;
+        --brand-slate: #767d89;
+        --bg: #ffffff;
+        --bg-soft: #f7fafc;
+
+        /* Gradiente firma */
+        --gradient-brand: linear-gradient(
+          135deg,
+          #0802ea 0%,
+          #5917d2 50%,
+          #1ce080 100%
+        );
+        --gradient-hero: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
+
+        /* Tipografía */
+        --font-heading: "Poppins", sans-serif;
+        --font-body: "Inter", sans-serif;
+
+        /* Sombras */
+        --shadow-card: 0 10px 30px rgba(16, 35, 42, 0.08);
+        --shadow-button: 0 4px 14px rgba(16, 35, 42, 0.12);
+        --shadow-button-hover: 0 6px 20px rgba(16, 35, 42, 0.15);
+
+        /* Transiciones */
+        --transition-base: all 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        --transition-medium: all 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* Reset y estilos base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--brand-ink);
+        background-color: var(--bg);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 3.75rem);
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 2.5rem;
+        position: relative;
+      }
+
+      h2:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 80px;
+        height: 4px;
+        background: var(--gradient-brand);
+        border-radius: 2px;
+      }
+
+      h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        color: var(--brand-ink);
+        font-weight: 400;
+      }
+
+      .text-lead {
+        font-size: 1.25rem;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      .text-secondary {
+        color: var(--brand-slate);
+        font-weight: 400;
+      }
+
+      a {
+        color: var(--brand-blue);
+        text-decoration: none;
+        transition: var(--transition-base);
+      }
+
+      a:hover {
+        color: var(--brand-purple);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: 6rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-header h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.875rem 2rem;
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition-base);
+        border: none;
+        outline: none;
+      }
+
+      .btn-primary {
+        background: var(--brand-mint);
+        color: var(--brand-ink);
+        box-shadow: var(--shadow-button);
+      }
+
+      .btn-primary:hover {
+        background: #16c973;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-button-hover);
+      }
+
+      .btn-primary:focus {
+        outline: 2px solid var(--brand-blue);
+        outline-offset: 2px;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--brand-ink);
+        border: 2px solid var(--brand-ink);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(16, 35, 42, 0.04);
+        transform: translateY(-2px);
+      }
+
+      .btn-white {
+        background: white;
+        color: var(--brand-ink);
+        box-shadow: var(--shadow-button);
+      }
+
+      .btn-white:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-button-hover);
+      }
+
+      .btn-gradient {
+        background: var(--gradient-brand);
+        color: white;
+        box-shadow: var(--shadow-button);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-gradient:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        opacity: 0;
+        transition: var(--transition-base);
+        z-index: -1;
+      }
+
+      .btn-gradient:hover:before {
+        opacity: 1;
+      }
+
+      .chip {
+        display: inline-flex;
+        padding: 0.375rem 0.875rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: var(--bg-soft);
+        border: 1px solid rgba(16, 35, 42, 0.1);
+      }
+
+      .chip-gradient {
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        background: var(--bg);
+      }
+
+      .chip-gradient:before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--gradient-brand);
+        border-radius: 50px;
+        z-index: -1;
+      }
+
+      .card {
+        background: var(--bg);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: var(--transition-base);
+        box-shadow: var(--shadow-card);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(16, 35, 42, 0.12);
+      }
+
+      .card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 1.75rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-soft);
+        border-radius: 12px;
+        transition: var(--transition-base);
+      }
+
+      .card:hover .card-icon {
+        transform: translateY(-6px);
+      }
+
+      /* Animaciones */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up {
+        animation: fadeUp 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transition: opacity 500ms ease,
+          transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .fade-in.appear {
+        opacity: 1;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(247, 250, 252, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        transition: var(--transition-base);
+        box-shadow: 0 2px 10px rgba(16, 35, 42, 0.05);
+      }
+
+      .navbar.scrolled {
+        padding: 0.75rem 0;
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo {
+        height: 42px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--brand-ink);
+        font-weight: 500;
+        font-size: 1rem;
+        position: relative;
+      }
+
+      .nav-links a:after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-brand);
+        transition: var(--transition-base);
+      }
+
+      .nav-links a:hover:after,
+      .nav-links a.active:after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--brand-ink);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 12rem 0 8rem;
+        position: relative;
+        overflow: hidden;
+        background: var(--gradient-hero);
+        color: white;
+      }
+
+      .hero:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000")
+          no-repeat center center;
+        background-size: cover;
+        opacity: 0.08;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-text {
+        flex: 1;
+        animation: fadeUp 800ms 100ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        opacity: 0;
+      }
+
+      .hero-text h1,
+      .hero-text p {
+        color: white;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        animation: fadeUp 800ms 300ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        opacity: 0;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 16px;
+        box-shadow: var(--shadow-card);
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .hero-badges .chip {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Value Propositions */
+      .value-props {
+        background: var(--bg);
+      }
+
+      .props-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .prop-card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 16px;
+        transition: var(--transition-base);
+      }
+
+      .prop-card:hover {
+        background: var(--bg-soft);
+      }
+
+      .prop-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-soft);
+        border-radius: 16px;
+      }
+
+      /* Services */
+      .services {
+        background: var(--bg-soft);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+      }
+
+      /* Success Cases */
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .case-kpi {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--brand-mint);
+        margin: 1rem 0;
+      }
+
+      /* Research */
+      .research {
+        background: var(--bg-soft);
+      }
+
+      .research-content {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .research-text {
+        flex: 1;
+      }
+
+      .research-image {
+        flex: 1;
+      }
+
+      .research-image img {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: var(--shadow-card);
+      }
+
+      /* Team */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .team-member {
+        text-align: center;
+      }
+
+      .team-photo {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        overflow: hidden;
+        border: 4px solid var(--bg);
+        box-shadow: var(--shadow-card);
+      }
+
+      .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team-social {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Integrations */
+      .integrations {
+        background: var(--bg-soft);
+        padding: 4rem 0;
+      }
+
+      .logos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+        opacity: 0.6;
+      }
+
+      .logo-item {
+        height: 40px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--gradient-brand);
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-section h2:after {
+        background: white;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+      }
+
+      /* Contact */
+      .contact-container {
+        display: flex;
+        gap: 4rem;
+      }
+
+      .contact-info {
+        flex: 1;
+      }
+
+      .contact-form {
+        flex: 1;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        border: 1px solid rgba(16, 35, 42, 0.15);
+        border-radius: 8px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: var(--transition-base);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--brand-blue);
+        box-shadow: 0 0 0 3px rgba(8, 2, 234, 0.15);
+      }
+
+      .form-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-check input {
+        margin-top: 0.25rem;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--brand-ink);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-logo {
+        height: 42px;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-heading {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      .footer-heading:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--gradient-brand);
+      }
+
+      .footer-links a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.75rem;
+        transition: var(--transition-base);
+      }
+
+      .footer-links a:hover {
+        color: var(--brand-mint);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        transition: var(--transition-base);
+      }
+
+      .social-icon:hover {
+        background: var(--brand-blue);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      /* Sticky CTA */
+      .sticky-cta {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 999;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .whatsapp-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-button);
+        transition: var(--transition-base);
+        animation: pulse 2s infinite;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .hero-content {
+          gap: 3rem;
+        }
+
+        .research-content {
+          gap: 3rem;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero-content,
+        .research-content {
+          flex-direction: column;
+        }
+
+        .hero-text,
+        .hero-image {
+          text-align: center;
+        }
+
+        .hero-cta,
+        .hero-badges {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .contact-container {
+          flex-direction: column;
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 4rem 0;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: white;
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          gap: 1.5rem;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+          z-index: 1001;
+        }
+
+        .hero {
+          padding: 9rem 0 4rem;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+        }
+
+        .hero-badges {
+          justify-content: center;
+        }
+
+        .sticky-cta {
+          bottom: 1rem;
+          right: 1rem;
+        }
+
+        .sticky-cta .btn {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .whatsapp-btn {
+          width: 48px;
+          height: 48px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 1.5rem;
+        }
+
+        .section-header h2:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .hero-text h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-cta .btn {
+          width: 100%;
+        }
+
+        .props-grid,
+        .services-grid,
+        .cases-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .cta-section {
+          padding: 4rem 0;
+        }
+
+        .sticky-cta {
+          flex-direction: column;
+          bottom: 1rem;
+          right: 1rem;
+        }
+
+        .sticky-cta .btn {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          padding: 0 1rem;
+        }
+
+        .hero {
+          padding: 8rem 0 3rem;
+        }
+
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .text-lead {
+          font-size: 1.1rem;
+        }
+
+        .hero-badges {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <!-- LOGO: REEMPLAZAR CON SVG/PNG REAL -->
+        <a href="#" class="navbar-logo">
+          <img
+            src="images/01_Aetherix_Full-Logo.png"
+            alt="Aetherix AI Solutions"
+            width="200"
+            height="42"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="#" class="active">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#casos">Casos de Éxito</a>
+          <a href="#investigacion">Investigación</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              Inteligencia artificial que convierte datos en decisiones y
+              resultados
+            </h1>
+            <p class="text-lead">
+              Implementamos soluciones de IA y analítica que reducen fallas,
+              automatizan procesos y elevan tu operación.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#contacto" class="btn btn-white">Agendar demo</a>
+              <a
+                href="#servicios"
+                class="btn btn-secondary"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  color: white;
+                  border-color: white;
+                "
+                >Conoce nuestras soluciones</a
+              >
+            </div>
+
+            <div class="hero-badges">
+              <div class="chip">Industria 4.0</div>
+              <div class="chip">Ciencia de Datos aplicada</div>
+              <div class="chip">Implementación end-to-end</div>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <!-- Imagen de ejemplo profesional para hero -->
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+              alt="Equipo profesional trabajando en tecnología e innovación"
+              style="
+                width: 100%;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(16, 35, 42, 0.08);
+              "
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="section value-props">
+      <div class="container">
+        <div class="props-grid">
+          <div class="prop-card fade-in">
+            <div class="prop-icon">
+              <i
+                class="fas fa-chart-line fa-2x"
+                style="color: var(--brand-ink)"
+              ></i>
+            </div>
+            <h3>Resultados medibles</h3>
+            <p class="text-secondary">
+              KPIs claros que demuestran el impacto en tu operación y resultados
+              financieros.
+            </p>
+          </div>
+
+          <div class="prop-card fade-in">
+            <div class="prop-icon">
+              <i class="fas fa-bolt fa-2x" style="color: var(--brand-ink)"></i>
+            </div>
+            <h3>Implementación ágil</h3>
+            <p class="text-secondary">
+              Despliegue rápido con metodologías probadas para maximizar tu ROI.
+            </p>
+          </div>
+
+          <div class="prop-card fade-in">
+            <div class="prop-icon">
+              <i
+                class="fas fa-puzzle-piece fa-2x"
+                style="color: var(--brand-ink)"
+              ></i>
+            </div>
+            <h3>Integración con tu stack</h3>
+            <p class="text-secondary">
+              Compatible con tus sistemas existentes sin interrupciones
+              operativas.
+            </p>
+          </div>
+
+          <div class="prop-card fade-in">
+            <div class="prop-icon">
+              <i
+                class="fas fa-shield-alt fa-2x"
+                style="color: var(--brand-ink)"
+              ></i>
+            </div>
+            <h3>Seguridad y cumplimiento</h3>
+            <p class="text-secondary">
+              Cumplimos con los más altos estándares de seguridad de datos y
+              normativas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="section services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Servicios de Clase Mundial</h2>
+          <p class="text-lead">
+            Soluciones de inteligencia artificial diseñadas para resolver
+            problemas reales y maximizar el valor de tus datos.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="card fade-in">
+            <!-- IMAGEN SERVICIO: REEMPLAZAR CON IMAGEN REAL -->
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              alt="Monitoreo de EPP"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-hard-hat fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>Monitoreo de EPP</h3>
+              <p>
+                Sistemas personalizados para seguridad industrial y supervisión
+                en tiempo real de equipos de protección personal.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              alt="Mantenimiento predictivo"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-tools fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>Mantenimiento predictivo</h3>
+              <p>
+                Análisis en tiempo real e histórico para anticipar fallas en
+                maquinaria y transporte.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000"
+              alt="Automatización de procesos"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-robot fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>Automatización de procesos</h3>
+              <p>
+                Optimización de flujos en RRHH, finanzas, logística, marketing y
+                atención al cliente.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000"
+              alt="HR Analytics Suite"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-users fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>HR Analytics Suite</h3>
+              <p>
+                Indicadores en tiempo real para retención, onboarding,
+                promociones y desarrollo de talento.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000"
+              alt="BI y software integrado"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-chart-pie fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>BI y software integrado</h3>
+              <p>
+                Consolidación de datos, reportes ejecutivos y sistemas
+                personalizados para toma de decisiones.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000"
+              alt="IA a medida"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="card-icon">
+                <i
+                  class="fas fa-cogs fa-2x"
+                  style="color: var(--brand-ink)"
+                ></i>
+              </div>
+              <h3>IA a medida</h3>
+              <p>
+                Soluciones diseñadas específicamente para tus necesidades
+                operativas y estratégicas.
+              </p>
+              <a href="#" class="text-secondary" style="margin-top: auto"
+                >Ver más →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Cases -->
+    <section id="casos" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Casos de Éxito</h2>
+          <p class="text-lead">
+            Resultados tangibles que transforman industrias y optimizan
+            operaciones.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              alt="Planta de vidrio templado"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="chip">Manufactura</div>
+              <h3>Reducción de fallas críticas</h3>
+              <p>
+                Implementamos un sistema de monitoreo predictivo en plantas de
+                vidrio templado para identificar puntos críticos antes de que
+                ocurrieran fallas.
+              </p>
+              <div class="case-kpi">-35% fallas críticas</div>
+              <a href="#" class="btn btn-secondary"
+                >Solicita el caso completo</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              alt="Digitalización automotriz"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="chip">Automotriz</div>
+              <h3>Digitalización de documentos</h3>
+              <p>
+                Solución de IA para clasificación y extracción de datos de
+                documentos en manufactura automotriz, eliminando procesos
+                manuales.
+              </p>
+              <div class="case-kpi">+70% eficiencia</div>
+              <a href="#" class="btn btn-secondary"
+                >Solicita el caso completo</a
+              >
+            </div>
+          </div>
+
+          <div class="card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              alt="Monitoreo seguridad"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-content">
+              <div class="chip">Metalurgia</div>
+              <h3>Monitoreo de seguridad</h3>
+              <p>
+                Sistema de visión computarizada para detección de uso de EPP en
+                operaciones metalúrgicas de alto riesgo.
+              </p>
+              <div class="case-kpi">-90% incidentes</div>
+              <a href="#" class="btn btn-secondary"
+                >Solicita el caso completo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research & Development -->
+    <section id="investigacion" class="section research">
+      <div class="container">
+        <div class="research-content">
+          <div class="research-text">
+            <div class="chip-gradient">Innovación</div>
+            <h2>Metodología de red hiperdinámica</h2>
+            <p class="text-lead">
+              Desarrollada por el M. en C. Mario Alberto Jara Reyna, nuestra
+              metodología patentada logra mejoras de hasta 90% en precisión y
+              velocidad de calibración óptica con IA.
+            </p>
+            <p>
+              Esta tecnología revolucionaria aplicada a mantenimiento predictivo
+              en tiempo real permite detectar anomalías con una precisión sin
+              precedentes, reduciendo falsos positivos y maximizando la
+              disponibilidad de activos críticos.
+            </p>
+            <a href="#" class="btn btn-primary" style="margin-top: 2rem"
+              >Explorar investigación</a
+            >
+          </div>
+
+          <div class="research-image fade-in">
+            <!-- IMAGEN INVESTIGACIÓN: REEMPLAZAR CON IMAGEN REAL -->
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000"
+              alt="Metodología de red hiperdinámica"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="nosotros" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Liderazgo Experto</h2>
+          <p class="text-lead">
+            Un equipo multidisciplinario con experiencia en ciencia de datos,
+            ingeniería, operaciones y negocios.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-member fade-in">
+            <div class="team-photo">
+              <!-- FOTO EQUIPO: REEMPLAZAR CON IMAGEN REAL -->
+              <img src="images/LM.jpg" alt="Lydia Martínez" loading="lazy" />
+            </div>
+            <h3>Lydia Martínez</h3>
+            <div class="chip">Directora General (CEO)</div>
+            <p>
+              +15 años liderando transformación digital en empresas
+              industriales.
+            </p>
+            <div class="team-social">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="team-photo">
+              <img src="images/MV.jpg" alt="Mario Vidaña" loading="lazy" />
+            </div>
+            <h3>Mario Vidaña</h3>
+            <div class="chip">Director de Operaciones (COO)</div>
+            <p>
+              Experto en optimización de procesos industriales y cadena de
+              suministro.
+            </p>
+            <div class="team-social">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="team-photo">
+              <img src="images/CH.jpg" alt="Carlos Hernández" loading="lazy" />
+            </div>
+            <h3>Carlos Hernández</h3>
+            <div class="chip">Director de Negocios (CBO)</div>
+            <p>
+              Estrategia comercial y desarrollo de soluciones centradas en el
+              cliente.
+            </p>
+            <div class="team-social">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member fade-in">
+            <div class="team-photo">
+              <img src="images/MJ.jpg" alt="Mario Jara" loading="lazy" />
+            </div>
+            <h3>Mario Jara</h3>
+            <div class="chip">Director de I+D (R&D)</div>
+            <p>
+              Investigador líder en algoritmos de IA aplicada a optimización
+              industrial.
+            </p>
+            <div class="team-social">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="integrations">
+      <div class="container">
+        <div class="logos-grid">
+          <!-- LOGOS INTEGRACIONES: REEMPLAZAR CON IMAGENES REALES -->
+          <div class="logo-item">
+            <img
+              src="https://via.placeholder.com/120x40?text=AWS"
+              alt="Amazon Web Services"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://via.placeholder.com/120x40?text=Azure"
+              alt="Microsoft Azure"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://via.placeholder.com/120x40?text=GCP"
+              alt="Google Cloud Platform"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://via.placeholder.com/120x40?text=Tableau"
+              alt="Tableau"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://via.placeholder.com/120x40?text=SAP"
+              alt="SAP"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Listo para acelerar tu operación con IA?</h2>
+        <p class="text-lead">
+          Implementamos soluciones escalables que generan valor desde el primer
+          día, con resultados medibles y soporte continuo.
+        </p>
+        <a href="#contacto" class="btn btn-gradient">Agendar demo</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contacto</h2>
+          <p class="text-lead">
+            Estamos listos para transformar tu operación con soluciones de
+            inteligencia artificial.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Monterrey, N.L., México</h3>
+            <p style="margin-bottom: 2rem">
+              Nuestro equipo está ubicado en el corazón tecnológico del norte de
+              México, trabajando con empresas de todo el país.
+            </p>
+
+            <div style="margin-bottom: 2rem">
+              <h4>Información de contacto</h4>
+              <p><strong>Teléfono:</strong> +52 811-066-6514</p>
+              <p><strong>Email:</strong> info@aetherix.mx</p>
+            </div>
+
+            <div>
+              <h4>Horario de atención</h4>
+              <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+              <p>Sábados: 10:00 AM - 2:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Nombre completo</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="company" class="form-label">Empresa</label>
+                <input type="text" id="company" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Teléfono</label>
+                <input type="tel" id="phone" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="interest" class="form-label">Área de interés</label>
+                <select id="interest" class="form-control" required>
+                  <option value="" disabled selected>
+                    Selecciona una opción
+                  </option>
+                  <option value="epp">Monitoreo de EPP</option>
+                  <option value="mantenimiento">
+                    Mantenimiento Predictivo
+                  </option>
+                  <option value="automatizacion">
+                    Automatización de Procesos
+                  </option>
+                  <option value="hr">HR Analytics Suite</option>
+                  <option value="bi">BI y Software Integrado</option>
+                  <option value="custom">IA a Medida</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" id="privacy" required />
+                <label for="privacy"
+                  >Acepto el tratamiento de mis datos según la
+                  <a href="#">Política de Privacidad</a></label
+                >
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- LOGO FOOTER: REEMPLAZAR CON SVG/PNG REAL -->
+            <img
+              src="images/07_Aetherix_Blanco.png"
+              alt="Aetherix AI Solutions"
+              class="footer-logo"
+              width="200"
+              height="42"
+            />
+            <p>
+              Transformación digital e inteligencia artificial para optimizar
+              operaciones empresariales.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Servicios</h4>
+            <div class="footer-links">
+              <a href="#">Monitoreo de EPP</a>
+              <a href="#">Mantenimiento Predictivo</a>
+              <a href="#">Automatización de Procesos</a>
+              <a href="#">HR Analytics Suite</a>
+              <a href="#">BI y Software Integrado</a>
+              <a href="#">IA a Medida</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Compañía</h4>
+            <div class="footer-links">
+              <a href="#">Nosotros</a>
+              <a href="#">Equipo</a>
+              <a href="#">Casos de Éxito</a>
+              <a href="#">Investigación</a>
+              <a href="#">Blog</a>
+              <a href="#">Trabaja con nosotros</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading">Legal</h4>
+            <div class="footer-links">
+              <a href="#">Términos y condiciones</a>
+              <a href="#">Política de privacidad</a>
+              <a href="#">Aviso legal</a>
+              <a href="#">Cookies</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Aetherix AI Solutions. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+      <a href="#contacto" class="btn btn-primary">Agendar demo</a>
+      <a href="#" class="whatsapp-btn">
+        <i class="fab fa-whatsapp fa-lg" style="color: white"></i>
+      </a>
+    </div>
+
+    <script>
+      // Animaciones al hacer scroll
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("appear");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      fadeElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      // Navbar scroll effect
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+            ? '<i class="fas fa-times fa-lg"></i>'
+            : '<i class="fas fa-bars fa-lg"></i>';
+        });
+      }
+
+      // Form submission
+      const contactForm = document.getElementById("contactForm");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // Aquí iría la lógica de envío del formulario
+          alert(
+            "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
+          );
+          contactForm.reset();
+        });
+      }
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Cerrar menú móvil si está abierto
+            if (navLinks.classList.contains("active")) {
+              navLinks.classList.remove("active");
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
