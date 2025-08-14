@@ -920,6 +920,14 @@
         .section {
           padding: 4rem 0;
         }
+        /* Ocultar botones de WhatsApp, Agendar demo y Contáctanos en móvil */
+        .sticky-cta,
+        .btn-primary[href*="contacto"],
+        .btn-primary[href*="Agendar"],
+        .btn.btn-primary,
+        .whatsapp-btn {
+          display: none !important;
+        }
 
         .nav-links {
           display: none;
