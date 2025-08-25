@@ -120,6 +120,9 @@
         /* Transiciones */
         --transition-base: all 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
         --transition-medium: all 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        --transition-fast: all 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        --transition-hover: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          box-shadow 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       /* Reset y estilos base */
@@ -351,7 +354,7 @@
 
       .card-img {
         width: 100%;
-        height: 200px;
+        height: 378px;
         object-fit: cover;
       }
 
@@ -477,63 +480,85 @@
 
       /* Hero Section */
       .hero {
-        padding: 12rem 0 8rem;
+        padding: 15rem 0 10rem;
         position: relative;
         overflow: hidden;
-        background: var(--gradient-hero);
         color: white;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
       }
 
-      .hero:before {
-        content: "";
+      /* Video Background */
+      .hero-video {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000")
-          no-repeat center center;
-        background-size: cover;
-        opacity: 0.08;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      /* Overlay para mejorar legibilidad */
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 2, 234, 0.712); /* Overlay azul semitransparente */
+        opacity: 0.5;
+        z-index: 2;
       }
 
       .hero-content {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 4rem;
         position: relative;
-        z-index: 2;
+        z-index: 3;
       }
 
       .hero-text {
         flex: 1;
+        text-align: center;
+        max-width: 1500px;
         animation: fadeUp 800ms 100ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         opacity: 0;
       }
 
-      .hero-text h1,
-      .hero-text p {
+      .hero-text h1 {
+        font-size: clamp(3.5rem, 7vw, 5.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 2rem;
         color: white;
       }
 
-      .hero-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        animation: fadeUp 800ms 300ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        opacity: 0;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-        border-radius: 16px;
-        box-shadow: var(--shadow-card);
+      .hero-text .text-lead {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 3rem;
+        color: rgba(255, 255, 255, 0.9);
       }
 
       .hero-cta {
         display: flex;
-        gap: 1rem;
-        margin-top: 2.5rem;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-cta .btn {
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+        font-weight: 600;
+        border-radius: 50px;
+        min-width: 200px;
       }
 
       .hero-badges {
@@ -541,12 +566,15 @@
         flex-wrap: wrap;
         gap: 1rem;
         margin-top: 3rem;
+        justify-content: center;
       }
 
       .hero-badges .chip {
         background: rgba(255, 255, 255, 0.15);
         color: white;
         border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
       }
 
       /* Value Propositions */
@@ -657,6 +685,361 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* Enhanced Team Interactivity */
+      .clickable-leader {
+        cursor: pointer;
+        transition: var(--transition-hover);
+        position: relative;
+        overflow: visible;
+        will-change: transform;
+      }
+
+      .clickable-leader:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(16, 35, 42, 0.15);
+      }
+
+      .team-photo {
+        position: relative;
+        overflow: hidden;
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform;
+      }
+
+      .hover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(8, 2, 234, 0.9) 0%,
+          rgba(89, 23, 210, 0.9) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        color: white;
+        font-weight: 600;
+        border-radius: 50%;
+        will-change: opacity;
+      }
+
+      .hover-overlay i {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hover-overlay span {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .clickable-leader:hover .hover-overlay {
+        opacity: 1;
+      }
+
+      .clickable-leader:hover .team-photo img {
+        transform: scale(1.1);
+      }
+
+      /* Premium Modal */
+      .leader-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .leader-modal.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(16, 35, 42, 0.8);
+        backdrop-filter: blur(10px);
+        animation: backdropFadeIn 0.4s ease-out;
+      }
+
+      .modal-content {
+        position: relative;
+        margin: auto;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh;
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 100px rgba(16, 35, 42, 0.3);
+        animation: modalSlideIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition-base);
+        z-index: 10;
+        backdrop-filter: blur(10px);
+      }
+
+      .modal-close:hover {
+        background: white;
+        transform: scale(1.1);
+      }
+
+      .modal-close i {
+        font-size: 1.2rem;
+        color: var(--brand-ink);
+      }
+
+      /* Modal Body Styles */
+      .modal-body {
+        padding: 3rem;
+        overflow-y: auto;
+        max-height: 90vh;
+      }
+
+      .modal-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        position: relative;
+      }
+
+      .modal-header::before {
+        content: "";
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: var(--gradient-brand);
+      }
+
+      .modal-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        overflow: hidden;
+        border: 4px solid white;
+        box-shadow: 0 10px 30px rgba(16, 35, 42, 0.2);
+      }
+
+      .modal-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .modal-name {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-title {
+        font-size: 1.2rem;
+        color: var(--brand-slate);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .modal-subtitle {
+        font-size: 1.1rem;
+        color: var(--brand-slate);
+        font-style: italic;
+        margin-bottom: 2rem;
+      }
+
+      .modal-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--brand-ink);
+        margin-bottom: 2.5rem;
+        text-align: justify;
+      }
+
+      .expertise-section {
+        margin-bottom: 2.5rem;
+      }
+
+      .expertise-section h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--brand-ink);
+      }
+
+      .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .expertise-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        background: rgba(28, 224, 128, 0.08);
+        border-radius: 12px;
+        border-left: 3px solid var(--brand-mint);
+        transition: var(--transition-base);
+      }
+
+      .expertise-item:hover {
+        background: rgba(28, 224, 128, 0.12);
+        transform: translateX(5px);
+      }
+
+      .expertise-item i {
+        color: var(--brand-blue);
+        margin-right: 0.75rem;
+        font-size: 1.2rem;
+      }
+
+      .expertise-item span {
+        font-weight: 500;
+        color: var(--brand-ink);
+      }
+
+      .achievements-section {
+        background: linear-gradient(
+          135deg,
+          rgba(8, 2, 234, 0.04) 0%,
+          rgba(28, 224, 128, 0.04) 100%
+        );
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        border-left: 4px solid var(--brand-blue);
+      }
+
+      .achievements-section h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--brand-ink);
+      }
+
+      .achievements-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .achievements-list li {
+        padding: 0.75rem 0;
+        position: relative;
+        padding-left: 2rem;
+        color: var(--brand-ink);
+        line-height: 1.6;
+        border-bottom: 1px solid rgba(28, 224, 128, 0.1);
+      }
+
+      .achievements-list li:last-child {
+        border-bottom: none;
+      }
+
+      .achievements-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0.75rem;
+        color: var(--brand-mint);
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .modal-linkedin {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(28, 224, 128, 0.1);
+      }
+
+      .linkedin-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--brand-blue) 0%,
+          var(--brand-purple) 100%
+        );
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: var(--transition-base);
+        box-shadow: var(--shadow-button);
+        font-size: 1.1rem;
+      }
+
+      .linkedin-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-button-hover);
+        color: white;
+      }
+
+      .linkedin-btn i {
+        margin-right: 0.75rem;
+        font-size: 1.2rem;
+      }
+
+      /* Animations */
+      @keyframes backdropFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8) translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
       }
 
       .team-social {
@@ -672,15 +1055,38 @@
       }
 
       .logos-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 3rem;
-        opacity: 0.6;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 2rem 2.5rem;
+        justify-items: center;
+        align-items: center;
+        opacity: 0.7;
+        padding: 1rem 0;
       }
 
       .logo-item {
-        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        max-width: 160px;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        background: none;
+      }
+
+      .logo-item img {
+        max-height: 48px;
+        max-width: 120px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(0.2) contrast(1.1);
+        transition: filter 0.2s;
+      }
+      .logo-item img:hover {
+        filter: grayscale(0) contrast(1.2)
+          drop-shadow(0 2px 8px rgba(8, 2, 234, 0.08));
       }
 
       /* CTA Section */
@@ -830,6 +1236,7 @@
         background: rgba(255, 255, 255, 0.08);
         border-radius: 8px;
         transition: var(--transition-base);
+        color: white;
       }
 
       .social-icon:hover {
@@ -895,8 +1302,7 @@
           flex-direction: column;
         }
 
-        .hero-text,
-        .hero-image {
+        .hero-text {
           text-align: center;
         }
 
@@ -953,6 +1359,12 @@
 
         .hero {
           padding: 9rem 0 4rem;
+          min-height: 80vh;
+        }
+
+        /* Ajustar overlay en móvil para mejor legibilidad */
+        .hero-overlay {
+          background: rgba(8, 2, 234, 0.8);
         }
 
         .hero-cta {
@@ -1002,11 +1414,55 @@
           width: 100%;
         }
 
+        /* En dispositivos muy pequeños, usar gradiente en lugar de video para mejor rendimiento */
+        .hero-video {
+          display: none;
+        }
+
+        .hero {
+          background: var(--gradient-hero);
+        }
+
+        .hero-overlay {
+          background: rgba(8, 2, 234, 0.3); /* Overlay más sutil sin video */
+        }
+
         .props-grid,
         .services-grid,
         .cases-grid,
         .team-grid {
           grid-template-columns: 1fr;
+        }
+
+        /* Modal responsive */
+        .modal-content {
+          width: 95%;
+          margin: 1rem auto;
+          max-height: 95vh;
+        }
+
+        .modal-body {
+          padding: 2rem 1.5rem;
+        }
+
+        .modal-name {
+          font-size: 1.8rem;
+        }
+
+        .modal-avatar {
+          width: 100px;
+          height: 100px;
+        }
+
+        .expertise-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-close {
+          top: 1rem;
+          right: 1rem;
+          width: 35px;
+          height: 35px;
         }
 
         .card {
@@ -1071,9 +1527,8 @@
           <a href="#" class="active">Inicio</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
-          <a href="#casos">Casos de Éxito</a>
+          <a href="#casos">Presentación</a>
           <a href="#investigacion">Investigación</a>
-          <a href="#contacto">Contacto</a>
         </div>
 
         <div class="nav-cta">
@@ -1087,13 +1542,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
+      <!-- Video Background -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="videos/hero-video.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+
+      <!-- Overlay para mejorar legibilidad del texto -->
+      <div class="hero-overlay"></div>
+
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1>
-              Inteligencia artificial que convierte datos en decisiones y
-              resultados
-            </h1>
+            <h1>IA que convierte datos en decisiones y resultados</h1>
             <p class="text-lead">
               Implementamos soluciones de IA y analítica que reducen fallas,
               automatizan procesos y elevan tu operación.
@@ -1118,20 +1579,6 @@
               <div class="chip">Ciencia de Datos aplicada</div>
               <div class="chip">Implementación end-to-end</div>
             </div>
-          </div>
-
-          <div class="hero-image">
-            <!-- Imagen de ejemplo profesional para hero -->
-            <img
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
-              alt="Equipo profesional trabajando en tecnología e innovación"
-              style="
-                width: 100%;
-                border-radius: 16px;
-                box-shadow: 0 10px 30px rgba(16, 35, 42, 0.08);
-              "
-              loading="lazy"
-            />
           </div>
         </div>
       </div>
@@ -1210,12 +1657,7 @@
         <div class="services-grid">
           <div class="card fade-in">
             <!-- IMAGEN SERVICIO: REEMPLAZAR CON IMAGEN REAL -->
-            <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
-              alt="Monitoreo de EPP"
-              class="card-img"
-              loading="lazy"
-            />
+            <img src="images/EPP.png" alt="Monitoreo de EPP" class="card-img" />
             <div class="card-content">
               <div class="card-icon">
                 <i
@@ -1228,18 +1670,17 @@
                 Sistemas personalizados para seguridad industrial y supervisión
                 en tiempo real de equipos de protección personal.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
 
           <div class="card fade-in">
             <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
+              src="images/Mtto Predictivo.png"
               alt="Mantenimiento predictivo"
               class="card-img"
-              loading="lazy"
             />
             <div class="card-content">
               <div class="card-icon">
@@ -1253,18 +1694,17 @@
                 Análisis en tiempo real e histórico para anticipar fallas en
                 maquinaria y transporte.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
 
           <div class="card fade-in">
             <img
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1000"
+              src="images/AutomatizaciónProcesos.png"
               alt="Automatización de procesos"
               class="card-img"
-              loading="lazy"
             />
             <div class="card-content">
               <div class="card-icon">
@@ -1278,18 +1718,17 @@
                 Optimización de flujos en RRHH, finanzas, logística, marketing y
                 atención al cliente.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
 
           <div class="card fade-in">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000"
+              src="images/HR Analytics Suite.png"
               alt="HR Analytics Suite"
               class="card-img"
-              loading="lazy"
             />
             <div class="card-content">
               <div class="card-icon">
@@ -1303,9 +1742,9 @@
                 Indicadores en tiempo real para retención, onboarding,
                 promociones y desarrollo de talento.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
 
@@ -1314,7 +1753,6 @@
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000"
               alt="BI y software integrado"
               class="card-img"
-              loading="lazy"
             />
             <div class="card-content">
               <div class="card-icon">
@@ -1328,18 +1766,17 @@
                 Consolidación de datos, reportes ejecutivos y sistemas
                 personalizados para toma de decisiones.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
 
           <div class="card fade-in">
             <img
-              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000"
+              src="images/IA a la medida.png"
               alt="IA a medida"
               class="card-img"
-              loading="lazy"
             />
             <div class="card-content">
               <div class="card-icon">
@@ -1353,9 +1790,9 @@
                 Soluciones diseñadas específicamente para tus necesidades
                 operativas y estratégicas.
               </p>
-              <a href="#" class="text-secondary" style="margin-top: auto"
+              <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -1366,80 +1803,119 @@
     <section id="casos" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Casos de Éxito</h2>
+          <h2>Video Corporativo</h2>
           <p class="text-lead">
-            Resultados tangibles que transforman industrias y optimizan
-            operaciones.
+            Descubre cómo Aetherix transforma empresas con inteligencia
+            artificial y tecnología de vanguardia.
           </p>
         </div>
-
-        <div class="cases-grid">
-          <div class="card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
-              alt="Planta de vidrio templado"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-content">
-              <div class="chip">Manufactura</div>
-              <h3>Reducción de fallas críticas</h3>
-              <p>
-                Implementamos un sistema de monitoreo predictivo en plantas de
-                vidrio templado para identificar puntos críticos antes de que
-                ocurrieran fallas.
-              </p>
-              <div class="case-kpi">-35% fallas críticas</div>
-              <a href="#" class="btn btn-secondary"
-                >Solicita el caso completo</a
-              >
+        <div
+          class="corporate-video-wrapper fade-in"
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <div class="corporate-video-card">
+            <div class="video-frame">
+              <video controls style="width: 100%; border-radius: 18px">
+                <source
+                  src="https://meetbuyersapp.s3.us-east-2.amazonaws.com/Aetherix.mp4"
+                  type="video/mp4"
+                />
+                Tu navegador no soporta el video.
+              </video>
             </div>
-          </div>
-
-          <div class="card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
-              alt="Digitalización automotriz"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-content">
-              <div class="chip">Automotriz</div>
-              <h3>Digitalización de documentos</h3>
-              <p>
-                Solución de IA para clasificación y extracción de datos de
-                documentos en manufactura automotriz, eliminando procesos
-                manuales.
-              </p>
-              <div class="case-kpi">+70% eficiencia</div>
-              <a href="#" class="btn btn-secondary"
-                >Solicita el caso completo</a
-              >
-            </div>
-          </div>
-
-          <div class="card fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000"
-              alt="Monitoreo seguridad"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-content">
-              <div class="chip">Metalurgia</div>
-              <h3>Monitoreo de seguridad</h3>
-              <p>
-                Sistema de visión computarizada para detección de uso de EPP en
-                operaciones metalúrgicas de alto riesgo.
-              </p>
-              <div class="case-kpi">-90% incidentes</div>
-              <a href="#" class="btn btn-secondary"
-                >Solicita el caso completo</a
-              >
+            <div class="video-caption">
+              <i
+                class="fas fa-play-circle"
+                style="color: var(--brand-mint); margin-right: 0.5rem"
+              ></i>
+              <span>Conoce nuestra visión y casos de impacto</span>
             </div>
           </div>
         </div>
       </div>
+      <style>
+        .corporate-video-wrapper {
+          margin: 0 auto;
+          max-width: 1200px;
+          width: 100%;
+        }
+        .corporate-video-card {
+          background: var(--bg);
+          border-radius: 22px;
+          box-shadow: 0 10px 40px rgba(16, 35, 42, 0.13);
+          padding: 2.5rem 2rem 1.5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .video-frame {
+          width: 100%;
+          max-width: 1100px;
+          min-width: 320px;
+          aspect-ratio: 16/7.5;
+          background: #000;
+          border-radius: 18px;
+          overflow: hidden;
+          box-shadow: 0 6px 24px rgba(8, 2, 234, 0.08);
+          transition: max-width 0.3s;
+        }
+
+        .video-frame video {
+          width: 100%;
+          height: 100%;
+          display: block;
+          background: #000;
+          border-radius: 18px;
+          object-fit: cover;
+        }
+        .video-caption {
+          margin-top: 1.5rem;
+          color: var(--brand-ink);
+          font-size: 1.15rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          opacity: 0.85;
+        }
+        @media (max-width: 1200px) {
+          .corporate-video-wrapper {
+            max-width: 1000px;
+          }
+          .video-frame {
+            max-width: 900px;
+          }
+        }
+        @media (max-width: 900px) {
+          .corporate-video-wrapper {
+            max-width: 100vw;
+          }
+          .corporate-video-card {
+            padding: 1.5rem 0.5rem 1rem 0.5rem;
+          }
+          .video-frame {
+            max-width: 100vw;
+            min-width: 0;
+            aspect-ratio: 16/9;
+          }
+        }
+        @media (max-width: 576px) {
+          .corporate-video-wrapper {
+            max-width: 100vw;
+            padding: 0;
+          }
+          .corporate-video-card {
+            border-radius: 12px;
+            padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+          }
+          .video-frame {
+            border-radius: 10px;
+            aspect-ratio: 16/9;
+          }
+          .video-caption {
+            font-size: 1rem;
+          }
+        }
+      </style>
     </section>
 
     <!-- Research & Development -->
@@ -1460,7 +1936,10 @@
               precedentes, reduciendo falsos positivos y maximizando la
               disponibilidad de activos críticos.
             </p>
-            <a href="#" class="btn btn-primary" style="margin-top: 2rem"
+            <a
+              href="https://www.spiedigitallibrary.org/journals/optical-engineering/volume-64/issue-5/053101/Calibration-of-wavefront-aberrations-using-supervised-learning-and-deep-learning/10.1117/1.OE.64.5.053101.short"
+              class="btn btn-primary"
+              style="margin-top: 2rem"
               >Explorar investigación</a
             >
           </div>
@@ -1468,9 +1947,8 @@
           <div class="research-image fade-in">
             <!-- IMAGEN INVESTIGACIÓN: REEMPLAZAR CON IMAGEN REAL -->
             <img
-              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000"
+              src="images/investigacion-mario-jara-page1.png"
               alt="Metodología de red hiperdinámica"
-              loading="lazy"
             />
           </div>
         </div>
@@ -1489,73 +1967,77 @@
         </div>
 
         <div class="team-grid">
-          <div class="team-member fade-in">
+          <div
+            class="team-member fade-in clickable-leader"
+            data-leader="lydia-martinez"
+          >
             <div class="team-photo">
-              <!-- FOTO EQUIPO: REEMPLAZAR CON IMAGEN REAL -->
-              <img src="images/LM.jpg" alt="Lydia Martínez" loading="lazy" />
+              <img src="images/LM.png" alt="Lydia Martínez" />
+              <div class="hover-overlay">
+                <i class="fas fa-info-circle"></i>
+                <span>Ver perfil</span>
+              </div>
             </div>
             <h3>Lydia Martínez</h3>
             <div class="chip">Directora General (CEO)</div>
-            <p>
-              +15 años liderando transformación digital en empresas
-              industriales.
-            </p>
-            <div class="team-social">
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
 
-          <div class="team-member fade-in">
+          <div
+            class="team-member fade-in clickable-leader"
+            data-leader="mario-vidana"
+          >
             <div class="team-photo">
-              <img src="images/MV.jpg" alt="Mario Vidaña" loading="lazy" />
+              <img src="images/MV.png" alt="Mario Vidaña" />
+              <div class="hover-overlay">
+                <i class="fas fa-info-circle"></i>
+                <span>Ver perfil</span>
+              </div>
             </div>
             <h3>Mario Vidaña</h3>
             <div class="chip">Director de Operaciones (COO)</div>
-            <p>
-              Experto en optimización de procesos industriales y cadena de
-              suministro.
-            </p>
-            <div class="team-social">
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
 
-          <div class="team-member fade-in">
+          <div
+            class="team-member fade-in clickable-leader"
+            data-leader="carlos-hernandez"
+          >
             <div class="team-photo">
-              <img src="images/CH.jpg" alt="Carlos Hernández" loading="lazy" />
+              <img src="images/CH.png" alt="Carlos Hernández" />
+              <div class="hover-overlay">
+                <i class="fas fa-info-circle"></i>
+                <span>Ver perfil</span>
+              </div>
             </div>
-            <h3>Carlos Hernández</h3>
+            <h3>Carlos Bermea</h3>
             <div class="chip">Director de Negocios (CBO)</div>
-            <p>
-              Estrategia comercial y desarrollo de soluciones centradas en el
-              cliente.
-            </p>
-            <div class="team-social">
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
 
-          <div class="team-member fade-in">
+          <div
+            class="team-member fade-in clickable-leader"
+            data-leader="mario-jara"
+          >
             <div class="team-photo">
-              <img src="images/MJ.jpg" alt="Mario Jara" loading="lazy" />
+              <img src="images/MJ.png" alt="Mario Jara" />
+              <div class="hover-overlay">
+                <i class="fas fa-info-circle"></i>
+                <span>Ver perfil</span>
+              </div>
             </div>
             <h3>Mario Jara</h3>
             <div class="chip">Director de I+D (R&D)</div>
-            <p>
-              Investigador líder en algoritmos de IA aplicada a optimización
-              industrial.
-            </p>
-            <div class="team-social">
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+          </div>
+        </div>
+
+        <!-- Modal/Overlay para mostrar información detallada -->
+        <div id="leader-modal" class="leader-modal">
+          <div class="modal-backdrop"></div>
+          <div class="modal-content">
+            <button class="modal-close">
+              <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Content will be dynamically inserted here -->
+            <div class="modal-body"></div>
           </div>
         </div>
       </div>
@@ -1567,39 +2049,19 @@
         <div class="logos-grid">
           <!-- LOGOS INTEGRACIONES: REEMPLAZAR CON IMAGENES REALES -->
           <div class="logo-item">
-            <img
-              src="https://via.placeholder.com/120x40?text=AWS"
-              alt="Amazon Web Services"
-              loading="lazy"
-            />
+            <img src="images/pytorch.png" alt="Amazon Web Services" />
           </div>
           <div class="logo-item">
-            <img
-              src="https://via.placeholder.com/120x40?text=Azure"
-              alt="Microsoft Azure"
-              loading="lazy"
-            />
+            <img src="images/azure.png" alt="Microsoft Azure" />
           </div>
           <div class="logo-item">
-            <img
-              src="https://via.placeholder.com/120x40?text=GCP"
-              alt="Google Cloud Platform"
-              loading="lazy"
-            />
+            <img src="images/cuda.jpg" alt="Google Cloud Platform" />
           </div>
           <div class="logo-item">
-            <img
-              src="https://via.placeholder.com/120x40?text=Tableau"
-              alt="Tableau"
-              loading="lazy"
-            />
+            <img src="images/databricks.png" alt="Tableau" />
           </div>
           <div class="logo-item">
-            <img
-              src="https://via.placeholder.com/120x40?text=SAP"
-              alt="SAP"
-              loading="lazy"
-            />
+            <img src="images/apache.png" alt="SAP" />
           </div>
         </div>
       </div>
@@ -1621,11 +2083,8 @@
     <section id="contacto" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Contacto</h2>
-          <p class="text-lead">
-            Estamos listos para transformar tu operación con soluciones de
-            inteligencia artificial.
-          </p>
+          <h2>Agenda Una Demo</h2>
+          <p class="text-lead">Descubre nuestras soluciones.</p>
         </div>
 
         <div class="contact-container">
@@ -1750,38 +2209,20 @@
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 class="footer-heading">Servicios</h4>
-            <div class="footer-links">
-              <a href="#">Monitoreo de EPP</a>
-              <a href="#">Mantenimiento Predictivo</a>
-              <a href="#">Automatización de Procesos</a>
-              <a href="#">HR Analytics Suite</a>
-              <a href="#">BI y Software Integrado</a>
-              <a href="#">IA a Medida</a>
-            </div>
-          </div>
-
           <div>
             <h4 class="footer-heading">Compañía</h4>
             <div class="footer-links">
               <a href="#">Nosotros</a>
               <a href="#">Equipo</a>
-              <a href="#">Casos de Éxito</a>
+              <a href="#">Presentación</a>
               <a href="#">Investigación</a>
-              <a href="#">Blog</a>
-              <a href="#">Trabaja con nosotros</a>
             </div>
           </div>
 
           <div>
             <h4 class="footer-heading">Legal</h4>
             <div class="footer-links">
-              <a href="#">Términos y condiciones</a>
               <a href="#">Política de privacidad</a>
-              <a href="#">Aviso legal</a>
-              <a href="#">Cookies</a>
             </div>
           </div>
         </div>
@@ -1794,7 +2235,6 @@
 
     <!-- Sticky CTA -->
     <div class="sticky-cta">
-      <a href="#contacto" class="btn btn-primary">Agendar demo</a>
       <a href="#" class="whatsapp-btn">
         <i class="fab fa-whatsapp fa-lg" style="color: white"></i>
       </a>
@@ -1879,6 +2319,208 @@
             }
           }
         });
+      });
+
+      // Enhanced Leadership Modal System
+      document.addEventListener("DOMContentLoaded", function () {
+        const leaderModal = document.getElementById("leader-modal");
+        const modalBody = leaderModal.querySelector(".modal-body");
+        const modalClose = leaderModal.querySelector(".modal-close");
+        const modalBackdrop = leaderModal.querySelector(".modal-backdrop");
+        const clickableLeaders = document.querySelectorAll(".clickable-leader");
+
+        // Data for each leader
+        const leadersData = {
+          "lydia-martinez": {
+            name: "Lydia Martínez",
+            title: "Directora General (CEO)",
+            subtitle: "Visionaria en transformación digital e innovación",
+            image: "images/LM.png",
+            description:
+              "Lydia Martínez combina más de 25 años de experiencia en gestión de talento, tecnologías emergentes y liderazgo de proyectos internacionales. Como CEO, impulsa la transformación digital con un enfoque estratégico, humano y de innovación constante.",
+            expertise: [
+              { icon: "fas fa-lightbulb", text: "Estrategia e Innovación" },
+              { icon: "fas fa-users", text: "Gestión de Talento" },
+              { icon: "fas fa-globe", text: "Proyectos Internacionales" },
+            ],
+            achievements: [
+              "Fundación y escalamiento de Aetherix a nivel internacional",
+              "Más de 25 años liderando equipos multiculturales",
+              "Reconocimiento como Top Executive en Tecnología",
+            ],
+          },
+          "mario-vidana": {
+            name: "Mario Vidaña",
+            title: "Director de Operaciones (COO)",
+            subtitle: "Transformando operaciones con inteligencia artificial",
+            image: "images/MV.png",
+            description:
+              "Experto en optimización de procesos industriales y cadena de suministro con más de 15 años de experiencia. Mario lidera la implementación de soluciones de IA que revolucionan las operaciones empresariales.",
+            expertise: [
+              { icon: "fas fa-cogs", text: "Optimización de Procesos" },
+              { icon: "fas fa-chart-line", text: "Analítica Operacional" },
+              { icon: "fas fa-robot", text: "Automatización IA" },
+            ],
+            achievements: [
+              "Reducción del 35% en costos operacionales en proyectos implementados",
+              "Liderazgo en más de 50 proyectos de transformación digital",
+              "Certificación en Lean Six Sigma Black Belt",
+            ],
+          },
+          "carlos-hernandez": {
+            name: "Carlos Hernández",
+            title: "Director de Negocios (CBO)",
+            subtitle: "Estratega comercial centrado en el cliente",
+            image: "images/CH.png",
+            description:
+              "Especialista en estrategia comercial y desarrollo de soluciones centradas en el cliente. Carlos lidera el crecimiento de Aetherix a través de relaciones estratégicas y soluciones innovadoras que generan valor real para nuestros clientes.",
+            expertise: [
+              { icon: "fas fa-handshake", text: "Desarrollo de Negocios" },
+              { icon: "fas fa-target", text: "Estrategia Comercial" },
+              { icon: "fas fa-heart", text: "Experiencia del Cliente" },
+            ],
+            achievements: [
+              "Crecimiento del 300% en cartera de clientes en 2 años",
+              "Desarrollo de alianzas estratégicas clave",
+              "95% de satisfacción del cliente en proyectos liderados",
+            ],
+          },
+          "mario-jara": {
+            name: "Mario Jara",
+            title: "Director de I+D (R&D)",
+            subtitle: "Investigador pionero en IA aplicada",
+            image: "images/MJ.png",
+            description:
+              "Investigador líder en algoritmos de IA aplicada a optimización industrial. Mario impulsa la innovación tecnológica de Aetherix, desarrollando soluciones de vanguardia que establecen nuevos estándares en la industria.",
+            expertise: [
+              { icon: "fas fa-brain", text: "Algoritmos de IA" },
+              { icon: "fas fa-flask", text: "Investigación Aplicada" },
+              { icon: "fas fa-industry", text: "Optimización Industrial" },
+            ],
+            achievements: [
+              "Más de 15 publicaciones en revistas científicas especializadas",
+              "Desarrollo de 8 patentes en algoritmos de IA",
+              "PhD en Ciencias de la Computación con especialización en IA",
+            ],
+          },
+        };
+
+        // Function to create modal content
+        function createModalContent(leaderData) {
+          return `
+            <div class="modal-header">
+              <div class="modal-avatar">
+                <img src="${leaderData.image}" alt="${leaderData.name}" />
+              </div>
+              <div class="modal-name">${leaderData.name}</div>
+              <div class="modal-title">${leaderData.title}</div>
+              <div class="modal-subtitle">${leaderData.subtitle}</div>
+            </div>
+
+            <div class="modal-description">
+              ${leaderData.description}
+            </div>
+
+            <div class="expertise-section">
+              <h4>Áreas de Expertise</h4>
+              <div class="expertise-grid">
+                ${leaderData.expertise
+                  .map(
+                    (item) => `
+                  <div class="expertise-item">
+                    <i class="${item.icon}"></i>
+                    <span>${item.text}</span>
+                  </div>
+                `
+                  )
+                  .join("")}
+              </div>
+            </div>
+
+            <div class="achievements-section">
+              <h4>Logros Destacados</h4>
+              <ul class="achievements-list">
+                ${leaderData.achievements
+                  .map(
+                    (achievement) => `
+                  <li>${achievement}</li>
+                `
+                  )
+                  .join("")}
+              </ul>
+            </div>
+
+            <div class="modal-linkedin">
+              <a href="#" class="linkedin-btn">
+                <i class="fab fa-linkedin-in"></i>
+                <span>Conectar en LinkedIn</span>
+              </a>
+            </div>
+          `;
+        }
+
+        // Function to open modal
+        function openModal(leaderId) {
+          const leaderData = leadersData[leaderId];
+          if (leaderData) {
+            modalBody.innerHTML = createModalContent(leaderData);
+            leaderModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+            // Add smooth entrance animation
+            setTimeout(() => {
+              leaderModal.style.opacity = "1";
+            }, 10);
+          }
+        }
+
+        // Function to close modal
+        function closeModal() {
+          leaderModal.style.opacity = "0";
+          setTimeout(() => {
+            leaderModal.classList.remove("active");
+            document.body.style.overflow = "";
+          }, 300);
+        }
+
+        // Event listeners for leader cards
+        clickableLeaders.forEach((leader) => {
+          leader.addEventListener("click", function () {
+            const leaderId = this.getAttribute("data-leader");
+            openModal(leaderId);
+          });
+
+          // Enhanced hover effect - Optimized for performance
+          leader.addEventListener("mouseenter", function () {
+            this.style.transition =
+              "transform 150ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 150ms cubic-bezier(0.2, 0.8, 0.2, 1)";
+            this.style.transform = "translateY(-8px) scale(1.02)";
+            this.style.boxShadow = "0 15px 40px rgba(16, 35, 42, 0.15)";
+          });
+
+          leader.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+            this.style.boxShadow = "";
+          });
+        });
+
+        // Event listeners for modal close
+        modalClose.addEventListener("click", closeModal);
+        modalBackdrop.addEventListener("click", closeModal);
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && leaderModal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+
+        // Prevent modal close when clicking inside modal content
+        leaderModal
+          .querySelector(".modal-content")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+          });
       });
     </script>
   </body>
