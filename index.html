@@ -1524,7 +1524,7 @@
         </a>
 
         <div class="nav-links">
-          <a href="#" class="active">Inicio</a>
+          <a href="#inicio" class="active">Inicio</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
           <a href="#casos">Presentación</a>
@@ -1541,7 +1541,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="inicio">
       <!-- Video Background -->
       <video class="hero-video" autoplay muted loop playsinline>
         <source src="videos/hero-video.mp4" type="video/mp4" />
@@ -1606,7 +1606,7 @@
             <div class="prop-icon">
               <i class="fas fa-bolt fa-2x" style="color: var(--brand-ink)"></i>
             </div>
-            <h3>Implementación ágil</h3>
+            <h3>Adopción ágil</h3>
             <p class="text-secondary">
               Despliegue rápido con metodologías probadas para maximizar tu ROI.
             </p>
@@ -1635,8 +1635,7 @@
             </div>
             <h3>Seguridad y cumplimiento</h3>
             <p class="text-secondary">
-              Cumplimos con los más altos estándares de seguridad de datos y
-              normativas.
+              Nos alineamos a los estándares de seguridad y normativas
             </p>
           </div>
         </div>
@@ -1649,7 +1648,7 @@
         <div class="section-header">
           <h2>Servicios de Clase Mundial</h2>
           <p class="text-lead">
-            Soluciones de inteligencia artificial diseñadas para resolver
+            Soluciones de Inteligencia Artificial diseñadas para resolver
             problemas reales y maximizar el valor de tus datos.
           </p>
         </div>
@@ -1940,6 +1939,8 @@
               href="https://www.spiedigitallibrary.org/journals/optical-engineering/volume-64/issue-5/053101/Calibration-of-wavefront-aberrations-using-supervised-learning-and-deep-learning/10.1117/1.OE.64.5.053101.short"
               class="btn btn-primary"
               style="margin-top: 2rem"
+              target="_blank"
+              rel="noopener noreferrer"
               >Explorar investigación</a
             >
           </div>
@@ -2212,10 +2213,11 @@
           <div>
             <h4 class="footer-heading">Compañía</h4>
             <div class="footer-links">
-              <a href="#">Nosotros</a>
-              <a href="#">Equipo</a>
-              <a href="#">Presentación</a>
-              <a href="#">Investigación</a>
+              <a href="#inicio">Inicio</a>
+              <a href="#nosotros">Nosotros</a>
+              <a href="#servicios">Servicios</a>
+              <a href="#casos">Presentación</a>
+              <a href="#investigacion">Investigación</a>
             </div>
           </div>
 
@@ -2321,6 +2323,64 @@
         });
       });
 
+      // Active Navigation Link Based on Scroll Position
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(
+          '.nav-links a, .nav-cta a[href^="#"]'
+        );
+        const sections = document.querySelectorAll("section[id]");
+
+        function updateActiveNavLink() {
+          let current = "";
+          const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+          // Check which section is currently in view
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          // Handle the hero section (when at top of page)
+          if (window.scrollY < 100) {
+            current = "inicio";
+          }
+
+          // Update active class on nav links
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            const href = link.getAttribute("href");
+
+            if (
+              href === `#${current}` ||
+              (href === "#inicio" && current === "")
+            ) {
+              link.classList.add("active");
+            }
+          });
+        }
+
+        // Update on scroll
+        window.addEventListener("scroll", updateActiveNavLink);
+
+        // Update on page load
+        updateActiveNavLink();
+
+        // Also update when clicking on nav links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            // Small delay to let scroll happen first
+            setTimeout(updateActiveNavLink, 100);
+          });
+        });
+      });
+
       // Enhanced Leadership Modal System
       document.addEventListener("DOMContentLoaded", function () {
         const leaderModal = document.getElementById("leader-modal");
@@ -2344,28 +2404,46 @@
               { icon: "fas fa-globe", text: "Proyectos Internacionales" },
             ],
             achievements: [
-              "Fundación y escalamiento de Aetherix a nivel internacional",
-              "Más de 25 años liderando equipos multiculturales",
-              "Reconocimiento como Top Executive en Tecnología",
+              "Liderazgo en múltiples proyectos de transformación digital y talento humano",
+              "Liderazgo en la Implementación de Tecnologías Emergentes (Blockchain)",
+              "Gestión de proyectos estratégicos para empresas globales",
             ],
+            socialLinks: {
+              linkedin:
+                "https://www.linkedin.com/in/lydia-mart%C3%ADnez-43583523/",
+            },
           },
           "mario-vidana": {
             name: "Mario Vidaña",
-            title: "Director de Operaciones (COO)",
-            subtitle: "Transformando operaciones con inteligencia artificial",
+            title: "Especialista en Optimización y Analítica con IA",
+            subtitle:
+              "Transformando decisiones y operaciones con inteligencia artificial",
             image: "images/MV.png",
             description:
-              "Experto en optimización de procesos industriales y cadena de suministro con más de 15 años de experiencia. Mario lidera la implementación de soluciones de IA que revolucionan las operaciones empresariales.",
+              "Profesional con experiencia en optimización de procesos administrativos, operativos y de producción. Mario ha liderado proyectos de automatización, analítica avanzada y visión por computadora, aplicando inteligencia artificial para generar eficiencias, reducir costos y potenciar la toma de decisiones estratégicas en diferentes industrias.",
             expertise: [
               { icon: "fas fa-cogs", text: "Optimización de Procesos" },
-              { icon: "fas fa-chart-line", text: "Analítica Operacional" },
-              { icon: "fas fa-robot", text: "Automatización IA" },
+              { icon: "fas fa-robot", text: "Automatización con RPA e IA" },
+              {
+                icon: "fas fa-chart-line",
+                text: "Analítica y Toma de Decisiones",
+              },
+              {
+                icon: "fas fa-eye",
+                text: "Visión Artificial aplicada a Negocios",
+              },
             ],
             achievements: [
-              "Reducción del 35% en costos operacionales en proyectos implementados",
-              "Liderazgo en más de 50 proyectos de transformación digital",
-              "Certificación en Lean Six Sigma Black Belt",
+              "Automatización de procesos críticos con RPA, reduciendo tiempos operativos de forma significativa",
+              "Desarrollo de sistemas de analítica para optimizar producción y decisiones de contenido",
+              "Diseño de soluciones de tracking en exposiciones para medir afluencia y comportamiento de visitantes con precisión",
+              "Aplicación de mantenimiento predictivo con IA, logrando importantes reducciones en costos operativos",
+              "Creación de un sistema de control de EPP con visión artificial, garantizando seguridad laboral y cumplimiento normativo en tiempo real",
             ],
+            socialLinks: {
+              linkedin:
+                "https://www.linkedin.com/in/mario-vida%C3%B1a-334238205/",
+            },
           },
           "carlos-hernandez": {
             name: "Carlos Hernández",
@@ -2384,6 +2462,9 @@
               "Desarrollo de alianzas estratégicas clave",
               "95% de satisfacción del cliente en proyectos liderados",
             ],
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/carloshdzbermea/",
+            },
           },
           "mario-jara": {
             name: "Mario Jara",
@@ -2402,6 +2483,9 @@
               "Desarrollo de 8 patentes en algoritmos de IA",
               "PhD en Ciencias de la Computación con especialización en IA",
             ],
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/mario-jara-8951581b8/",
+            },
           },
         };
 
@@ -2451,7 +2535,9 @@
             </div>
 
             <div class="modal-linkedin">
-              <a href="#" class="linkedin-btn">
+              <a href="${
+                leaderData.socialLinks.linkedin
+              }" class="linkedin-btn" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin-in"></i>
                 <span>Conectar en LinkedIn</span>
               </a>
