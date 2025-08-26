@@ -87,1427 +87,7 @@
       href="images/01_Aetherix_Simoblo-Verde.png"
     />
 
-    <style>
-      /* Variables CSS */
-      :root {
-        /* Paleta de marca */
-        --brand-ink: #10232a;
-        --brand-mint: #1ce080;
-        --brand-blue: #0802ea;
-        --brand-purple: #5917d2;
-        --brand-slate: #767d89;
-        --bg: #ffffff;
-        --bg-soft: #f7fafc;
-
-        /* Gradiente firma */
-        --gradient-brand: linear-gradient(
-          135deg,
-          #0802ea 0%,
-          #5917d2 50%,
-          #1ce080 100%
-        );
-        --gradient-hero: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
-
-        /* Tipografía */
-        --font-heading: "Poppins", sans-serif;
-        --font-body: "Inter", sans-serif;
-
-        /* Sombras */
-        --shadow-card: 0 10px 30px rgba(16, 35, 42, 0.08);
-        --shadow-button: 0 4px 14px rgba(16, 35, 42, 0.12);
-        --shadow-button-hover: 0 6px 20px rgba(16, 35, 42, 0.15);
-
-        /* Transiciones */
-        --transition-base: all 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
-        --transition-medium: all 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
-        --transition-fast: all 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
-        --transition-hover: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
-          box-shadow 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      /* Reset y estilos base */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: var(--font-body);
-        color: var(--brand-ink);
-        background-color: var(--bg);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: var(--font-heading);
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-size: clamp(2.5rem, 5vw, 3.75rem);
-        font-weight: 800;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: 2.5rem;
-        position: relative;
-      }
-
-      h2:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 80px;
-        height: 4px;
-        background: var(--gradient-brand);
-        border-radius: 2px;
-      }
-
-      h3 {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-        margin-bottom: 1rem;
-      }
-
-      p {
-        margin-bottom: 1.5rem;
-        color: var(--brand-ink);
-        font-weight: 400;
-      }
-
-      .text-lead {
-        font-size: 1.25rem;
-        font-weight: 500;
-        opacity: 0.9;
-      }
-
-      .text-secondary {
-        color: var(--brand-slate);
-        font-weight: 400;
-      }
-
-      a {
-        color: var(--brand-blue);
-        text-decoration: none;
-        transition: var(--transition-base);
-      }
-
-      a:hover {
-        color: var(--brand-purple);
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .section {
-        padding: 6rem 0;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-
-      .section-header h2:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.875rem 2rem;
-        border-radius: 8px;
-        font-family: var(--font-body);
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: var(--transition-base);
-        border: none;
-        outline: none;
-      }
-
-      .btn-primary {
-        background: var(--brand-mint);
-        color: var(--brand-ink);
-        box-shadow: var(--shadow-button);
-      }
-
-      .btn-primary:hover {
-        background: #16c973;
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-button-hover);
-      }
-
-      .btn-primary:focus {
-        outline: 2px solid var(--brand-blue);
-        outline-offset: 2px;
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: var(--brand-ink);
-        border: 2px solid var(--brand-ink);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(16, 35, 42, 0.04);
-        transform: translateY(-2px);
-      }
-
-      .btn-white {
-        background: white;
-        color: var(--brand-ink);
-        box-shadow: var(--shadow-button);
-      }
-
-      .btn-white:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-button-hover);
-      }
-
-      .btn-gradient {
-        background: var(--gradient-brand);
-        color: white;
-        box-shadow: var(--shadow-button);
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      .btn-gradient:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.15);
-        opacity: 0;
-        transition: var(--transition-base);
-        z-index: -1;
-      }
-
-      .btn-gradient:hover:before {
-        opacity: 1;
-      }
-
-      .chip {
-        display: inline-flex;
-        padding: 0.375rem 0.875rem;
-        border-radius: 50px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        background: var(--bg-soft);
-        border: 1px solid rgba(16, 35, 42, 0.1);
-      }
-
-      .chip-gradient {
-        border: 2px solid transparent;
-        background-clip: padding-box;
-        position: relative;
-        background: var(--bg);
-      }
-
-      .chip-gradient:before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: var(--gradient-brand);
-        border-radius: 50px;
-        z-index: -1;
-      }
-
-      .card {
-        background: var(--bg);
-        border-radius: 16px;
-        overflow: hidden;
-        transition: var(--transition-base);
-        box-shadow: var(--shadow-card);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(16, 35, 42, 0.12);
-      }
-
-      .card-img {
-        width: 100%;
-        height: 378px;
-        object-fit: cover;
-      }
-
-      .card-content {
-        padding: 1.75rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card-icon {
-        width: 56px;
-        height: 56px;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--bg-soft);
-        border-radius: 12px;
-        transition: var(--transition-base);
-      }
-
-      .card:hover .card-icon {
-        transform: translateY(-6px);
-      }
-
-      /* Animaciones */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-up {
-        animation: fadeUp 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-      }
-
-      .fade-in {
-        opacity: 0;
-        transition: opacity 500ms ease,
-          transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      .fade-in.appear {
-        opacity: 1;
-      }
-
-      /* Navbar */
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(247, 250, 252, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 1rem 0;
-        transition: var(--transition-base);
-        box-shadow: 0 2px 10px rgba(16, 35, 42, 0.05);
-      }
-
-      .navbar.scrolled {
-        padding: 0.75rem 0;
-      }
-
-      .navbar-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navbar-logo {
-        height: 42px;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 2.5rem;
-        align-items: center;
-      }
-
-      .nav-links a {
-        color: var(--brand-ink);
-        font-weight: 500;
-        font-size: 1rem;
-        position: relative;
-      }
-
-      .nav-links a:after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--gradient-brand);
-        transition: var(--transition-base);
-      }
-
-      .nav-links a:hover:after,
-      .nav-links a.active:after {
-        width: 100%;
-      }
-
-      .nav-cta {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .mobile-menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--brand-ink);
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 15rem 0 10rem;
-        position: relative;
-        overflow: hidden;
-        color: white;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-
-      /* Video Background */
-      .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-      }
-
-      /* Overlay para mejorar legibilidad */
-      .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(10, 2, 234, 0.712); /* Overlay azul semitransparente */
-        opacity: 0.5;
-        z-index: 2;
-      }
-
-      .hero-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4rem;
-        position: relative;
-        z-index: 3;
-      }
-
-      .hero-text {
-        flex: 1;
-        text-align: center;
-        max-width: 1500px;
-        animation: fadeUp 800ms 100ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        opacity: 0;
-      }
-
-      .hero-text h1 {
-        font-size: clamp(3.5rem, 7vw, 5.5rem);
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 2rem;
-        color: white;
-      }
-
-      .hero-text .text-lead {
-        font-size: clamp(1.4rem, 3vw, 2rem);
-        font-weight: 500;
-        line-height: 1.4;
-        margin-bottom: 3rem;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .hero-cta {
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 3rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .hero-cta .btn {
-        font-size: 1.2rem;
-        padding: 1rem 2.5rem;
-        font-weight: 600;
-        border-radius: 50px;
-        min-width: 200px;
-      }
-
-      .hero-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 3rem;
-        justify-content: center;
-      }
-
-      .hero-badges .chip {
-        background: rgba(255, 255, 255, 0.15);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-
-      /* Value Propositions */
-      .value-props {
-        background: var(--bg);
-      }
-
-      .props-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2.5rem;
-      }
-
-      .prop-card {
-        text-align: center;
-        padding: 2rem;
-        border-radius: 16px;
-        transition: var(--transition-base);
-      }
-
-      .prop-card:hover {
-        background: var(--bg-soft);
-      }
-
-      .prop-icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--bg-soft);
-        border-radius: 16px;
-      }
-
-      /* Services */
-      .services {
-        background: var(--bg-soft);
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-      }
-
-      /* Success Cases */
-      .cases-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-      }
-
-      .case-kpi {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--brand-mint);
-        margin: 1rem 0;
-      }
-
-      /* Research */
-      .research {
-        background: var(--bg-soft);
-      }
-
-      .research-content {
-        display: flex;
-        align-items: center;
-        gap: 4rem;
-      }
-
-      .research-text {
-        flex: 1;
-      }
-
-      .research-image {
-        flex: 1;
-      }
-
-      .research-image img {
-        width: 100%;
-        border-radius: 16px;
-        box-shadow: var(--shadow-card);
-      }
-
-      /* Team */
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 2.5rem;
-      }
-
-      .team-member {
-        text-align: center;
-      }
-
-      .team-photo {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        overflow: hidden;
-        border: 4px solid var(--bg);
-        box-shadow: var(--shadow-card);
-      }
-
-      .team-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      /* Enhanced Team Interactivity */
-      .clickable-leader {
-        cursor: pointer;
-        transition: var(--transition-hover);
-        position: relative;
-        overflow: visible;
-        will-change: transform;
-      }
-
-      .clickable-leader:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(16, 35, 42, 0.15);
-      }
-
-      .team-photo {
-        position: relative;
-        overflow: hidden;
-        transform: translateZ(0); /* Force hardware acceleration */
-        will-change: transform;
-      }
-
-      .hover-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(8, 2, 234, 0.9) 0%,
-          rgba(89, 23, 210, 0.9) 100%
-        );
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
-        color: white;
-        font-weight: 600;
-        border-radius: 50%;
-        will-change: opacity;
-      }
-
-      .hover-overlay i {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .hover-overlay span {
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .clickable-leader:hover .hover-overlay {
-        opacity: 1;
-      }
-
-      .clickable-leader:hover .team-photo img {
-        transform: scale(1.1);
-      }
-
-      /* Premium Modal */
-      .leader-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        display: none;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      }
-
-      .leader-modal.active {
-        display: flex;
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .modal-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(16, 35, 42, 0.8);
-        backdrop-filter: blur(10px);
-        animation: backdropFadeIn 0.4s ease-out;
-      }
-
-      .modal-content {
-        position: relative;
-        margin: auto;
-        max-width: 800px;
-        width: 90%;
-        max-height: 90vh;
-        background: white;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 25px 100px rgba(16, 35, 42, 0.3);
-        animation: modalSlideIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        position: relative;
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: var(--transition-base);
-        z-index: 10;
-        backdrop-filter: blur(10px);
-      }
-
-      .modal-close:hover {
-        background: white;
-        transform: scale(1.1);
-      }
-
-      .modal-close i {
-        font-size: 1.2rem;
-        color: var(--brand-ink);
-      }
-
-      /* Modal Body Styles */
-      .modal-body {
-        padding: 3rem;
-        overflow-y: auto;
-        max-height: 90vh;
-      }
-
-      .modal-header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-        position: relative;
-      }
-
-      .modal-header::before {
-        content: "";
-        position: absolute;
-        top: -3rem;
-        left: 0;
-        right: 0;
-        height: 6px;
-        background: var(--gradient-brand);
-      }
-
-      .modal-avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        overflow: hidden;
-        border: 4px solid white;
-        box-shadow: 0 10px 30px rgba(16, 35, 42, 0.2);
-      }
-
-      .modal-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .modal-name {
-        font-size: 2.2rem;
-        font-weight: 700;
-        background: var(--gradient-brand);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 0.5rem;
-      }
-
-      .modal-title {
-        font-size: 1.2rem;
-        color: var(--brand-slate);
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-
-      .modal-subtitle {
-        font-size: 1.1rem;
-        color: var(--brand-slate);
-        font-style: italic;
-        margin-bottom: 2rem;
-      }
-
-      .modal-description {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: var(--brand-ink);
-        margin-bottom: 2.5rem;
-        text-align: justify;
-      }
-
-      .expertise-section {
-        margin-bottom: 2.5rem;
-      }
-
-      .expertise-section h4 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        color: var(--brand-ink);
-      }
-
-      .expertise-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-      }
-
-      .expertise-item {
-        display: flex;
-        align-items: center;
-        padding: 1rem;
-        background: rgba(28, 224, 128, 0.08);
-        border-radius: 12px;
-        border-left: 3px solid var(--brand-mint);
-        transition: var(--transition-base);
-      }
-
-      .expertise-item:hover {
-        background: rgba(28, 224, 128, 0.12);
-        transform: translateX(5px);
-      }
-
-      .expertise-item i {
-        color: var(--brand-blue);
-        margin-right: 0.75rem;
-        font-size: 1.2rem;
-      }
-
-      .expertise-item span {
-        font-weight: 500;
-        color: var(--brand-ink);
-      }
-
-      .achievements-section {
-        background: linear-gradient(
-          135deg,
-          rgba(8, 2, 234, 0.04) 0%,
-          rgba(28, 224, 128, 0.04) 100%
-        );
-        padding: 2rem;
-        border-radius: 16px;
-        margin-bottom: 2rem;
-        border-left: 4px solid var(--brand-blue);
-      }
-
-      .achievements-section h4 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        color: var(--brand-ink);
-      }
-
-      .achievements-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .achievements-list li {
-        padding: 0.75rem 0;
-        position: relative;
-        padding-left: 2rem;
-        color: var(--brand-ink);
-        line-height: 1.6;
-        border-bottom: 1px solid rgba(28, 224, 128, 0.1);
-      }
-
-      .achievements-list li:last-child {
-        border-bottom: none;
-      }
-
-      .achievements-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0.75rem;
-        color: var(--brand-mint);
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-
-      .modal-linkedin {
-        text-align: center;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(28, 224, 128, 0.1);
-      }
-
-      .linkedin-btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 1rem 2rem;
-        background: linear-gradient(
-          135deg,
-          var(--brand-blue) 0%,
-          var(--brand-purple) 100%
-        );
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: var(--transition-base);
-        box-shadow: var(--shadow-button);
-        font-size: 1.1rem;
-      }
-
-      .linkedin-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-button-hover);
-        color: white;
-      }
-
-      .linkedin-btn i {
-        margin-right: 0.75rem;
-        font-size: 1.2rem;
-      }
-
-      /* Animations */
-      @keyframes backdropFadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes modalSlideIn {
-        from {
-          opacity: 0;
-          transform: scale(0.8) translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
-      }
-
-      .team-social {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      /* Integrations */
-      .integrations {
-        background: var(--bg-soft);
-        padding: 4rem 0;
-      }
-
-      .logos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 2rem 2.5rem;
-        justify-items: center;
-        align-items: center;
-        opacity: 0.7;
-        padding: 1rem 0;
-      }
-
-      .logo-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        max-width: 160px;
-        width: 100%;
-        padding: 0.5rem 1rem;
-        background: none;
-      }
-
-      .logo-item img {
-        max-height: 48px;
-        max-width: 120px;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        filter: grayscale(0.2) contrast(1.1);
-        transition: filter 0.2s;
-      }
-      .logo-item img:hover {
-        filter: grayscale(0) contrast(1.2)
-          drop-shadow(0 2px 8px rgba(8, 2, 234, 0.08));
-      }
-
-      /* CTA Section */
-      .cta-section {
-        background: var(--gradient-brand);
-        color: white;
-        padding: 6rem 0;
-        text-align: center;
-      }
-
-      .cta-section h2 {
-        color: white;
-        margin-bottom: 1.5rem;
-      }
-
-      .cta-section h2:after {
-        background: white;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .cta-section p {
-        color: rgba(255, 255, 255, 0.85);
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-      }
-
-      /* Contact */
-      .contact-container {
-        display: flex;
-        gap: 4rem;
-      }
-
-      .contact-info {
-        flex: 1;
-      }
-
-      .contact-form {
-        flex: 1;
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
-
-      .form-control {
-        width: 100%;
-        padding: 0.875rem 1rem;
-        border: 1px solid rgba(16, 35, 42, 0.15);
-        border-radius: 8px;
-        font-family: var(--font-body);
-        font-size: 1rem;
-        transition: var(--transition-base);
-      }
-
-      .form-control:focus {
-        outline: none;
-        border-color: var(--brand-blue);
-        box-shadow: 0 0 0 3px rgba(8, 2, 234, 0.15);
-      }
-
-      .form-check {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .form-check input {
-        margin-top: 0.25rem;
-      }
-
-      /* Footer */
-      .footer {
-        background: var(--brand-ink);
-        color: white;
-        padding: 4rem 0 2rem;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3rem;
-        margin-bottom: 3rem;
-      }
-
-      .footer-logo {
-        height: 42px;
-        margin-bottom: 1.5rem;
-      }
-
-      .footer-heading {
-        color: white;
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.75rem;
-      }
-
-      .footer-heading:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: var(--gradient-brand);
-      }
-
-      .footer-links a {
-        display: block;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 0.75rem;
-        transition: var(--transition-base);
-      }
-
-      .footer-links a:hover {
-        color: var(--brand-mint);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 2rem;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.875rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-icon {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-        transition: var(--transition-base);
-        color: white;
-      }
-
-      .social-icon:hover {
-        background: var(--brand-blue);
-        transform: translateY(-2px);
-        color: white;
-      }
-
-      /* Sticky CTA */
-      .sticky-cta {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 999;
-        display: flex;
-        gap: 1rem;
-      }
-
-      .whatsapp-btn {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: #25d366;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: var(--shadow-button);
-        transition: var(--transition-base);
-        animation: pulse 2s infinite;
-      }
-
-      .whatsapp-btn:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1200px) {
-        .hero-content {
-          gap: 3rem;
-        }
-
-        .research-content {
-          gap: 3rem;
-        }
-      }
-
-      @media (max-width: 1024px) {
-        .hero-content,
-        .research-content {
-          flex-direction: column;
-        }
-
-        .hero-text {
-          text-align: center;
-        }
-
-        .hero-cta,
-        .hero-badges {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 900px) {
-        .contact-container {
-          flex-direction: column;
-        }
-
-        .team-grid {
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        }
-      }
-
-      @media (max-width: 768px) {
-        .section {
-          padding: 4rem 0;
-        }
-        /* Ocultar botones de WhatsApp, Agendar demo y Contáctanos en móvil */
-        .sticky-cta,
-        .btn-primary[href*="contacto"],
-        .btn-primary[href*="Agendar"],
-        .btn.btn-primary,
-        .whatsapp-btn {
-          display: none !important;
-        }
-
-        .nav-links {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background: white;
-          flex-direction: column;
-          padding: 2rem;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          gap: 1.5rem;
-        }
-
-        .nav-links.active {
-          display: flex;
-        }
-
-        .mobile-menu-btn {
-          display: block;
-          z-index: 1001;
-        }
-
-        .hero {
-          padding: 9rem 0 4rem;
-          min-height: 80vh;
-        }
-
-        /* Ajustar overlay en móvil para mejor legibilidad */
-        .hero-overlay {
-          background: rgba(8, 2, 234, 0.8);
-        }
-
-        .hero-cta {
-          flex-direction: column;
-        }
-
-        .hero-badges {
-          justify-content: center;
-        }
-
-        .sticky-cta {
-          bottom: 1rem;
-          right: 1rem;
-        }
-
-        .sticky-cta .btn {
-          padding: 0.75rem 1.5rem;
-          font-size: 0.9rem;
-        }
-
-        .whatsapp-btn {
-          width: 48px;
-          height: 48px;
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .container {
-          padding: 0 1.5rem;
-        }
-
-        .section-header h2:after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-
-        .hero-text h1 {
-          font-size: 2.2rem;
-        }
-
-        .hero-cta .btn {
-          width: 100%;
-        }
-
-        /* En dispositivos muy pequeños, usar gradiente en lugar de video para mejor rendimiento */
-        .hero-video {
-          display: none;
-        }
-
-        .hero {
-          background: var(--gradient-hero);
-        }
-
-        .hero-overlay {
-          background: rgba(8, 2, 234, 0.3); /* Overlay más sutil sin video */
-        }
-
-        .props-grid,
-        .services-grid,
-        .cases-grid,
-        .team-grid {
-          grid-template-columns: 1fr;
-        }
-
-        /* Modal responsive */
-        .modal-content {
-          width: 95%;
-          margin: 1rem auto;
-          max-height: 95vh;
-        }
-
-        .modal-body {
-          padding: 2rem 1.5rem;
-        }
-
-        .modal-name {
-          font-size: 1.8rem;
-        }
-
-        .modal-avatar {
-          width: 100px;
-          height: 100px;
-        }
-
-        .expertise-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .modal-close {
-          top: 1rem;
-          right: 1rem;
-          width: 35px;
-          height: 35px;
-        }
-
-        .card {
-          max-width: 400px;
-          margin: 0 auto;
-        }
-
-        .cta-section {
-          padding: 4rem 0;
-        }
-
-        .sticky-cta {
-          flex-direction: column;
-          bottom: 1rem;
-          right: 1rem;
-        }
-
-        .sticky-cta .btn {
-          width: auto;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .container {
-          padding: 0 1rem;
-        }
-
-        .hero {
-          padding: 8rem 0 3rem;
-        }
-
-        .hero-text h1 {
-          font-size: 2rem;
-        }
-
-        .text-lead {
-          font-size: 1.1rem;
-        }
-
-        .hero-badges {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -1524,15 +104,42 @@
         </a>
 
         <div class="nav-links">
-          <a href="#inicio" class="active">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#casos">Presentación</a>
-          <a href="#investigacion">Investigación</a>
+          <a href="#inicio" class="active" data-translate="nav-inicio"
+            >Inicio</a
+          >
+          <a href="#nosotros" data-translate="nav-nosotros">Nosotros</a>
+          <a href="#servicios" data-translate="nav-servicios">Servicios</a>
+          <a href="#casos" data-translate="nav-casos">Presentación</a>
+          <a href="#investigacion" data-translate="nav-investigacion"
+            >Investigación</a
+          >
         </div>
 
         <div class="nav-cta">
-          <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+          <a
+            href="#contacto"
+            class="btn btn-primary"
+            data-translate="nav-contacto"
+            >Contáctanos</a
+          >
+          <div class="language-switcher">
+            <button class="lang-btn active" data-lang="es">
+              <img
+                src="https://flagcdn.com/w20/mx.png"
+                alt="Español"
+                width="20"
+                height="15"
+              />
+            </button>
+            <button class="lang-btn" data-lang="en">
+              <img
+                src="https://flagcdn.com/w20/us.png"
+                alt="English"
+                width="20"
+                height="15"
+              />
+            </button>
+          </div>
           <button class="mobile-menu-btn">
             <i class="fas fa-bars fa-lg"></i>
           </button>
@@ -1554,14 +161,24 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1>IA que convierte datos en decisiones y resultados</h1>
-            <p class="text-lead">
-              Implementamos soluciones de IA y analítica que reducen fallas,
-              automatizan procesos y elevan tu operación.
+            <h1 data-translate="hero-title">
+              Transformamos tu negocio con
+              <span style="color: var(--brand-green)"
+                >Inteligencia Artificial</span
+              >
+            </h1>
+            <p class="text-lead" data-translate="hero-subtitle">
+              Soluciones de IA empresarial que impulsan el crecimiento,
+              optimizan procesos y generan valor real para tu organización
             </p>
 
             <div class="hero-cta">
-              <a href="#contacto" class="btn btn-white">Agendar demo</a>
+              <a
+                href="#contacto"
+                class="btn btn-white"
+                data-translate="hero-cta-primary"
+                >Agendar Demo Gratuita</a
+              >
               <a
                 href="#servicios"
                 class="btn btn-secondary"
@@ -1570,14 +187,21 @@
                   color: white;
                   border-color: white;
                 "
-                >Conoce nuestras soluciones</a
+                data-translate="hero-cta-secondary"
+                >Ver Servicios</a
               >
             </div>
 
             <div class="hero-badges">
-              <div class="chip">Industria 4.0</div>
-              <div class="chip">Ciencia de Datos aplicada</div>
-              <div class="chip">Implementación end-to-end</div>
+              <div class="chip" data-translate="hero-badge-1">
+                Industria 4.0
+              </div>
+              <div class="chip" data-translate="hero-badge-2">
+                Ciencia de Datos aplicada
+              </div>
+              <div class="chip" data-translate="hero-badge-3">
+                Implementación end-to-end
+              </div>
             </div>
           </div>
         </div>
@@ -1595,8 +219,8 @@
                 style="color: var(--brand-ink)"
               ></i>
             </div>
-            <h3>Resultados medibles</h3>
-            <p class="text-secondary">
+            <h3 data-translate="value-prop-1-title">Resultados medibles</h3>
+            <p class="text-secondary" data-translate="value-prop-1-desc">
               KPIs claros que demuestran el impacto en tu operación y resultados
               financieros.
             </p>
@@ -1606,8 +230,8 @@
             <div class="prop-icon">
               <i class="fas fa-bolt fa-2x" style="color: var(--brand-ink)"></i>
             </div>
-            <h3>Adopción ágil</h3>
-            <p class="text-secondary">
+            <h3 data-translate="value-prop-2-title">Adopción ágil</h3>
+            <p class="text-secondary" data-translate="value-prop-2-desc">
               Despliegue rápido con metodologías probadas para maximizar tu ROI.
             </p>
           </div>
@@ -1619,8 +243,10 @@
                 style="color: var(--brand-ink)"
               ></i>
             </div>
-            <h3>Integración con tu stack</h3>
-            <p class="text-secondary">
+            <h3 data-translate="value-prop-3-title">
+              Integración con tu stack
+            </h3>
+            <p class="text-secondary" data-translate="value-prop-3-desc">
               Compatible con tus sistemas existentes sin interrupciones
               operativas.
             </p>
@@ -1633,8 +259,10 @@
                 style="color: var(--brand-ink)"
               ></i>
             </div>
-            <h3>Seguridad y cumplimiento</h3>
-            <p class="text-secondary">
+            <h3 data-translate="value-prop-4-title">
+              Seguridad y cumplimiento
+            </h3>
+            <p class="text-secondary" data-translate="value-prop-4-desc">
               Nos alineamos a los estándares de seguridad y normativas
             </p>
           </div>
@@ -1646,10 +274,9 @@
     <section id="servicios" class="section services">
       <div class="container">
         <div class="section-header">
-          <h2>Servicios de Clase Mundial</h2>
-          <p class="text-lead">
-            Soluciones de Inteligencia Artificial diseñadas para resolver
-            problemas reales y maximizar el valor de tus datos.
+          <h2 data-translate="services-title">Nuestros Servicios</h2>
+          <p class="text-lead" data-translate="services-subtitle">
+            Soluciones integrales de IA para tu empresa
           </p>
         </div>
 
@@ -1664,10 +291,10 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>Monitoreo de EPP</h3>
-              <p>
-                Sistemas personalizados para seguridad industrial y supervisión
-                en tiempo real de equipos de protección personal.
+              <h3 data-translate="service-4-title">EPP Intelligence</h3>
+              <p data-translate="service-4-desc">
+                Sistemas inteligentes de monitoreo y gestión de equipos de
+                protección personal para garantizar la seguridad laboral.
               </p>
               <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
@@ -1688,10 +315,11 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>Mantenimiento predictivo</h3>
-              <p>
-                Análisis en tiempo real e histórico para anticipar fallas en
-                maquinaria y transporte.
+              <h3 data-translate="service-3-title">Mantenimiento Predictivo</h3>
+              <p data-translate="service-3-desc">
+                Implementamos sistemas de mantenimiento predictivo que utilizan
+                IA para prevenir fallas y optimizar el rendimiento de tus
+                equipos.
               </p>
               <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
@@ -1712,10 +340,13 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>Automatización de procesos</h3>
-              <p>
-                Optimización de flujos en RRHH, finanzas, logística, marketing y
-                atención al cliente.
+              <h3 data-translate="service-2-title">
+                Automatización de Procesos
+              </h3>
+              <p data-translate="service-2-desc">
+                Optimizamos y automatizamos tus procesos empresariales
+                utilizando tecnologías de IA avanzadas para maximizar la
+                eficiencia operacional.
               </p>
               <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
@@ -1736,10 +367,11 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>HR Analytics Suite</h3>
-              <p>
-                Indicadores en tiempo real para retención, onboarding,
-                promociones y desarrollo de talento.
+              <h3 data-translate="service-5-title">HR Analytics Suite</h3>
+              <p data-translate="service-5-desc">
+                Plataforma integral de análisis de recursos humanos que utiliza
+                IA para optimizar la gestión del talento y mejorar la
+                experiencia del empleado.
               </p>
               <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
@@ -1760,7 +392,7 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>BI y software integrado</h3>
+              <h3>Business Intelligence</h3>
               <p>
                 Consolidación de datos, reportes ejecutivos y sistemas
                 personalizados para toma de decisiones.
@@ -1784,10 +416,11 @@
                   style="color: var(--brand-ink)"
                 ></i>
               </div>
-              <h3>IA a medida</h3>
-              <p>
-                Soluciones diseñadas específicamente para tus necesidades
-                operativas y estratégicas.
+              <h3 data-translate="service-1-title">IA a la Medida</h3>
+              <p data-translate="service-1-desc">
+                Desarrollamos soluciones de inteligencia artificial
+                personalizadas que se adaptan perfectamente a las necesidades
+                específicas de tu negocio.
               </p>
               <!-- <a href="#" class="text-secondary" style="margin-top: auto"
                 >Ver más →</a
@@ -1798,12 +431,12 @@
       </div>
     </section>
 
-    <!-- Success Cases -->
+    <!-- Video Corporativo -->
     <section id="casos" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Video Corporativo</h2>
-          <p class="text-lead">
+          <h2 data-translate="video-title">Video Corporativo</h2>
+          <p class="text-lead" data-translate="video-subtitle">
             Descubre cómo Aetherix transforma empresas con inteligencia
             artificial y tecnología de vanguardia.
           </p>
@@ -1827,7 +460,9 @@
                 class="fas fa-play-circle"
                 style="color: var(--brand-mint); margin-right: 0.5rem"
               ></i>
-              <span>Conoce nuestra visión y casos de impacto</span>
+              <span data-translate="video-caption"
+                >Conoce nuestra visión y casos de impacto</span
+              >
             </div>
           </div>
         </div>
@@ -1922,14 +557,21 @@
       <div class="container">
         <div class="research-content">
           <div class="research-text">
-            <div class="chip-gradient">Innovación</div>
-            <h2>Metodología de red hiperdinámica</h2>
-            <p class="text-lead">
+            <div class="chip-gradient" data-translate="innovation-tag">
+              Innovación
+            </div>
+            <h2 data-translate="dynamic-network-methodology">
+              Metodología de red hiperdinámica
+            </h2>
+            <p
+              class="text-lead"
+              data-translate="dynamic-network-methodology-description"
+            >
               Desarrollada por el M. en C. Mario Alberto Jara Reyna, nuestra
               metodología patentada logra mejoras de hasta 90% en precisión y
               velocidad de calibración óptica con IA.
             </p>
-            <p>
+            <p data-translate="dynamic-network-methodology-description-2">
               Esta tecnología revolucionaria aplicada a mantenimiento predictivo
               en tiempo real permite detectar anomalías con una precisión sin
               precedentes, reduciendo falsos positivos y maximizando la
@@ -1941,6 +583,7 @@
               style="margin-top: 2rem"
               target="_blank"
               rel="noopener noreferrer"
+              data-translate="explore-research"
               >Explorar investigación</a
             >
           </div>
@@ -1960,10 +603,9 @@
     <section id="nosotros" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Liderazgo Experto</h2>
-          <p class="text-lead">
-            Un equipo multidisciplinario con experiencia en ciencia de datos,
-            ingeniería, operaciones y negocios.
+          <h2 data-translate="leadership-title">Nuestro Liderazgo</h2>
+          <p class="text-lead" data-translate="leadership-subtitle">
+            Conoce al equipo que lidera la innovación
           </p>
         </div>
 
@@ -1976,11 +618,13 @@
               <img src="images/LM.png" alt="Lydia Martínez" />
               <div class="hover-overlay">
                 <i class="fas fa-info-circle"></i>
-                <span>Ver perfil</span>
+                <span data-translate="view-profile">Ver perfil</span>
               </div>
             </div>
             <h3>Lydia Martínez</h3>
-            <div class="chip">Directora General (CEO)</div>
+            <div class="chip" data-translate="leader-lydia-title">
+              Directora General (CEO)
+            </div>
           </div>
 
           <div
@@ -1991,11 +635,13 @@
               <img src="images/MV.png" alt="Mario Vidaña" />
               <div class="hover-overlay">
                 <i class="fas fa-info-circle"></i>
-                <span>Ver perfil</span>
+                <span data-translate="view-profile">Ver perfil</span>
               </div>
             </div>
             <h3>Mario Vidaña</h3>
-            <div class="chip">Director de Operaciones (COO)</div>
+            <div class="chip" data-translate="leader-mario-vidana-title">
+              Director de Operaciones (COO)
+            </div>
           </div>
 
           <div
@@ -2006,11 +652,13 @@
               <img src="images/CH.png" alt="Carlos Hernández" />
               <div class="hover-overlay">
                 <i class="fas fa-info-circle"></i>
-                <span>Ver perfil</span>
+                <span data-translate="view-profile">Ver perfil</span>
               </div>
             </div>
             <h3>Carlos Bermea</h3>
-            <div class="chip">Director de Negocios (CBO)</div>
+            <div class="chip" data-translate="leader-carlos-title">
+              Director de Negocios (CBO)
+            </div>
           </div>
 
           <div
@@ -2021,11 +669,13 @@
               <img src="images/MJ.png" alt="Mario Jara" />
               <div class="hover-overlay">
                 <i class="fas fa-info-circle"></i>
-                <span>Ver perfil</span>
+                <span data-translate="view-profile">Ver perfil</span>
               </div>
             </div>
             <h3>Mario Jara</h3>
-            <div class="chip">Director de I+D (R&D)</div>
+            <div class="chip" data-translate="leader-mario-jara-title">
+              Director de I+D (R&D)
+            </div>
           </div>
         </div>
 
@@ -2071,12 +721,14 @@
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2>Listo para acelerar tu operación con IA?</h2>
-        <p class="text-lead">
-          Implementamos soluciones escalables que generan valor desde el primer
-          día, con resultados medibles y soporte continuo.
+        <h2 data-translate="cta-title">¿Listo para transformar tu negocio?</h2>
+        <p class="text-lead" data-translate="cta-subtitle">
+          Agenda una consulta gratuita y descubre cómo la IA puede impulsar tus
+          resultados.
         </p>
-        <a href="#contacto" class="btn btn-gradient">Agendar demo</a>
+        <a href="#contacto" class="btn btn-gradient" data-translate="cta-button"
+          >Agendar demo</a
+        >
       </div>
     </section>
 
@@ -2084,75 +736,133 @@
     <section id="contacto" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Agenda Una Demo</h2>
-          <p class="text-lead">Descubre nuestras soluciones.</p>
+          <h2 data-translate="contact-title">Contáctanos</h2>
+          <p class="text-lead" data-translate="contact-subtitle">
+            Comencemos a transformar tu negocio juntos
+          </p>
         </div>
 
         <div class="contact-container">
           <div class="contact-info">
-            <h3>Monterrey, N.L., México</h3>
-            <p style="margin-bottom: 2rem">
+            <h3 data-translate="contact-address">
+              Guadalajara, Jalisco, México
+            </h3>
+            <p
+              style="margin-bottom: 2rem"
+              data-translate="contact-team-location"
+            >
               Nuestro equipo está ubicado en el corazón tecnológico del norte de
               México, trabajando con empresas de todo el país.
             </p>
 
             <div style="margin-bottom: 2rem">
-              <h4>Información de contacto</h4>
-              <p><strong>Teléfono:</strong> +52 811-066-6514</p>
-              <p><strong>Email:</strong> info@aetherix.mx</p>
+              <h4 data-translate="contact-info">Información de Contacto</h4>
+              <p>
+                <strong data-translate="contact-phone-tag">Teléfono:</strong>
+                <span data-translate="contact-phone">+52 33 1234 5678</span>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <span data-translate="contact-email">info@aetherix.mx</span>
+              </p>
             </div>
 
             <div>
-              <h4>Horario de atención</h4>
-              <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-              <p>Sábados: 10:00 AM - 2:00 PM</p>
+              <h4 data-translate="contact-schedule">Horario de atención</h4>
+              <p data-translate="contact-weekdays">
+                Lunes a Viernes: 9:00 AM - 6:00 PM
+              </p>
+              <p data-translate="contact-saturdays">
+                Sábados: 10:00 AM - 2:00 PM
+              </p>
             </div>
           </div>
 
           <div class="contact-form">
             <form id="contactForm">
               <div class="form-group">
-                <label for="name" class="form-label">Nombre completo</label>
+                <label for="name" class="form-label" data-translate="form-name"
+                  >Nombre completo</label
+                >
                 <input type="text" id="name" class="form-control" required />
               </div>
 
               <div class="form-group">
-                <label for="company" class="form-label">Empresa</label>
+                <label
+                  for="company"
+                  class="form-label"
+                  data-translate="form-company"
+                  >Empresa</label
+                >
                 <input type="text" id="company" class="form-control" required />
               </div>
 
               <div class="form-group">
-                <label for="email" class="form-label">Email</label>
+                <label
+                  for="email"
+                  class="form-label"
+                  data-translate="form-email"
+                  >Email</label
+                >
                 <input type="email" id="email" class="form-control" required />
               </div>
 
               <div class="form-group">
-                <label for="phone" class="form-label">Teléfono</label>
+                <label
+                  for="phone"
+                  class="form-label"
+                  data-translate="form-phone"
+                  >Teléfono</label
+                >
                 <input type="tel" id="phone" class="form-control" required />
               </div>
 
               <div class="form-group">
-                <label for="interest" class="form-label">Área de interés</label>
+                <label
+                  for="interest"
+                  class="form-label"
+                  data-translate="form-interest"
+                  >Área de interés</label
+                >
                 <select id="interest" class="form-control" required>
                   <option value="" disabled selected>
                     Selecciona una opción
                   </option>
-                  <option value="epp">Monitoreo de EPP</option>
-                  <option value="mantenimiento">
+                  <option value="epp" data-translate="form-option-epp">
+                    Monitoreo EPP
+                  </option>
+                  <option
+                    value="mantenimiento"
+                    data-translate="form-option-maintenance"
+                  >
                     Mantenimiento Predictivo
                   </option>
-                  <option value="automatizacion">
-                    Automatización de Procesos
+                  <option
+                    value="automatizacion"
+                    data-translate="form-option-automation"
+                  >
+                    Automatización
                   </option>
-                  <option value="hr">HR Analytics Suite</option>
-                  <option value="bi">BI y Software Integrado</option>
-                  <option value="custom">IA a Medida</option>
+                  <option value="hr" data-translate="form-option-hr">
+                    HR Analytics
+                  </option>
+                  <option value="bi" data-translate="form-option-bi">
+                    Business Intelligence
+                  </option>
+                  <option value="custom" data-translate="form-option-custom">
+                    IA Personalizada
+                  </option>
                   <option value="otro">Otro</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="message" class="form-label">Mensaje</label>
+                <label
+                  for="message"
+                  class="form-label"
+                  data-translate="form-message"
+                  >Mensaje</label
+                >
                 <textarea
                   id="message"
                   rows="4"
@@ -2163,13 +873,16 @@
 
               <div class="form-check">
                 <input type="checkbox" id="privacy" required />
-                <label for="privacy"
-                  >Acepto el tratamiento de mis datos según la
-                  <a href="#">Política de Privacidad</a></label
+                <label for="privacy" data-translate="form-privacy"
+                  >Acepto el tratamiento de información</label
                 >
               </div>
 
-              <button type="submit" class="btn btn-primary">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-translate="form-submit"
+              >
                 Enviar mensaje
               </button>
             </form>
@@ -2191,9 +904,9 @@
               width="200"
               height="42"
             />
-            <p>
-              Transformación digital e inteligencia artificial para optimizar
-              operaciones empresariales.
+            <p data-translate="footer-description">
+              Transformando el futuro empresarial con Inteligencia Artificial
+              avanzada.
             </p>
             <div class="social-links">
               <a href="#" class="social-icon">
@@ -2211,26 +924,36 @@
             </div>
           </div>
           <div>
-            <h4 class="footer-heading">Compañía</h4>
+            <h4 class="footer-heading" data-translate="footer-services-title">
+              Servicios
+            </h4>
             <div class="footer-links">
-              <a href="#inicio">Inicio</a>
-              <a href="#nosotros">Nosotros</a>
-              <a href="#servicios">Servicios</a>
-              <a href="#casos">Presentación</a>
-              <a href="#investigacion">Investigación</a>
+              <a href="#inicio" data-translate="nav-inicio">Inicio</a>
+              <a href="#nosotros" data-translate="nav-nosotros">Nosotros</a>
+              <a href="#servicios" data-translate="nav-servicios">Servicios</a>
+              <a href="#casos" data-translate="nav-casos">Presentación</a>
+              <a href="#investigacion" data-translate="nav-investigacion"
+                >Investigación</a
+              >
             </div>
           </div>
 
           <div>
-            <h4 class="footer-heading">Legal</h4>
+            <h4 class="footer-heading" data-translate="footer-contact-title">
+              Contacto
+            </h4>
             <div class="footer-links">
-              <a href="#">Política de privacidad</a>
+              <a href="#" data-translate="footer-privacy"
+                >Política de privacidad</a
+              >
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>© 2025 Aetherix AI Solutions. Todos los derechos reservados.</p>
+          <p data-translate="footer-rights">
+            © 2024 Aetherix AI Solutions. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
@@ -2242,372 +965,6 @@
       </a>
     </div>
 
-    <script>
-      // Animaciones al hacer scroll
-      const fadeElements = document.querySelectorAll(".fade-in");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("appear");
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        }
-      );
-
-      fadeElements.forEach((element) => {
-        observer.observe(element);
-      });
-
-      // Navbar scroll effect
-      const navbar = document.querySelector(".navbar");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-
-      // Mobile menu toggle
-      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-      const navLinks = document.querySelector(".nav-links");
-
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener("click", () => {
-          navLinks.classList.toggle("active");
-          mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
-            ? '<i class="fas fa-times fa-lg"></i>'
-            : '<i class="fas fa-bars fa-lg"></i>';
-        });
-      }
-
-      // Form submission
-      const contactForm = document.getElementById("contactForm");
-
-      if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          // Aquí iría la lógica de envío del formulario
-          alert(
-            "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
-          );
-          contactForm.reset();
-        });
-      }
-
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: "smooth",
-            });
-
-            // Cerrar menú móvil si está abierto
-            if (navLinks.classList.contains("active")) {
-              navLinks.classList.remove("active");
-              mobileMenuBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
-            }
-          }
-        });
-      });
-
-      // Active Navigation Link Based on Scroll Position
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll(
-          '.nav-links a, .nav-cta a[href^="#"]'
-        );
-        const sections = document.querySelectorAll("section[id]");
-
-        function updateActiveNavLink() {
-          let current = "";
-          const scrollPosition = window.scrollY + 100; // Offset for navbar height
-
-          // Check which section is currently in view
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-              scrollPosition >= sectionTop &&
-              scrollPosition < sectionTop + sectionHeight
-            ) {
-              current = section.getAttribute("id");
-            }
-          });
-
-          // Handle the hero section (when at top of page)
-          if (window.scrollY < 100) {
-            current = "inicio";
-          }
-
-          // Update active class on nav links
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            const href = link.getAttribute("href");
-
-            if (
-              href === `#${current}` ||
-              (href === "#inicio" && current === "")
-            ) {
-              link.classList.add("active");
-            }
-          });
-        }
-
-        // Update on scroll
-        window.addEventListener("scroll", updateActiveNavLink);
-
-        // Update on page load
-        updateActiveNavLink();
-
-        // Also update when clicking on nav links
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function () {
-            // Small delay to let scroll happen first
-            setTimeout(updateActiveNavLink, 100);
-          });
-        });
-      });
-
-      // Enhanced Leadership Modal System
-      document.addEventListener("DOMContentLoaded", function () {
-        const leaderModal = document.getElementById("leader-modal");
-        const modalBody = leaderModal.querySelector(".modal-body");
-        const modalClose = leaderModal.querySelector(".modal-close");
-        const modalBackdrop = leaderModal.querySelector(".modal-backdrop");
-        const clickableLeaders = document.querySelectorAll(".clickable-leader");
-
-        // Data for each leader
-        const leadersData = {
-          "lydia-martinez": {
-            name: "Lydia Martínez",
-            title: "Directora General (CEO)",
-            subtitle: "Visionaria en transformación digital e innovación",
-            image: "images/LM.png",
-            description:
-              "Lydia Martínez combina más de 25 años de experiencia en gestión de talento, tecnologías emergentes y liderazgo de proyectos internacionales. Como CEO, impulsa la transformación digital con un enfoque estratégico, humano y de innovación constante.",
-            expertise: [
-              { icon: "fas fa-lightbulb", text: "Estrategia e Innovación" },
-              { icon: "fas fa-users", text: "Gestión de Talento" },
-              { icon: "fas fa-globe", text: "Proyectos Internacionales" },
-            ],
-            achievements: [
-              "Liderazgo en múltiples proyectos de transformación digital y talento humano",
-              "Liderazgo en la Implementación de Tecnologías Emergentes (Blockchain)",
-              "Gestión de proyectos estratégicos para empresas globales",
-            ],
-            socialLinks: {
-              linkedin:
-                "https://www.linkedin.com/in/lydia-mart%C3%ADnez-43583523/",
-            },
-          },
-          "mario-vidana": {
-            name: "Mario Vidaña",
-            title: "Especialista en Optimización y Analítica con IA",
-            subtitle:
-              "Transformando decisiones y operaciones con inteligencia artificial",
-            image: "images/MV.png",
-            description:
-              "Profesional con experiencia en optimización de procesos administrativos, operativos y de producción. Mario ha liderado proyectos de automatización, analítica avanzada y visión por computadora, aplicando inteligencia artificial para generar eficiencias, reducir costos y potenciar la toma de decisiones estratégicas en diferentes industrias.",
-            expertise: [
-              { icon: "fas fa-cogs", text: "Optimización de Procesos" },
-              { icon: "fas fa-robot", text: "Automatización con RPA e IA" },
-              {
-                icon: "fas fa-chart-line",
-                text: "Analítica y Toma de Decisiones",
-              },
-              {
-                icon: "fas fa-eye",
-                text: "Visión Artificial aplicada a Negocios",
-              },
-            ],
-            achievements: [
-              "Automatización de procesos críticos con RPA, reduciendo tiempos operativos de forma significativa",
-              "Desarrollo de sistemas de analítica para optimizar producción y decisiones de contenido",
-              "Diseño de soluciones de tracking en exposiciones para medir afluencia y comportamiento de visitantes con precisión",
-              "Aplicación de mantenimiento predictivo con IA, logrando importantes reducciones en costos operativos",
-              "Creación de un sistema de control de EPP con visión artificial, garantizando seguridad laboral y cumplimiento normativo en tiempo real",
-            ],
-            socialLinks: {
-              linkedin:
-                "https://www.linkedin.com/in/mario-vida%C3%B1a-334238205/",
-            },
-          },
-          "carlos-hernandez": {
-            name: "Carlos Hernández",
-            title: "Director de Negocios (CBO)",
-            subtitle: "Estratega comercial centrado en el cliente",
-            image: "images/CH.png",
-            description:
-              "Especialista en estrategia comercial y desarrollo de soluciones centradas en el cliente. Carlos lidera el crecimiento de Aetherix a través de relaciones estratégicas y soluciones innovadoras que generan valor real para nuestros clientes.",
-            expertise: [
-              { icon: "fas fa-handshake", text: "Desarrollo de Negocios" },
-              { icon: "fas fa-target", text: "Estrategia Comercial" },
-              { icon: "fas fa-heart", text: "Experiencia del Cliente" },
-            ],
-            achievements: [
-              "Crecimiento del 300% en cartera de clientes en 2 años",
-              "Desarrollo de alianzas estratégicas clave",
-              "95% de satisfacción del cliente en proyectos liderados",
-            ],
-            socialLinks: {
-              linkedin: "https://www.linkedin.com/in/carloshdzbermea/",
-            },
-          },
-          "mario-jara": {
-            name: "Mario Jara",
-            title: "Director de I+D (R&D)",
-            subtitle: "Investigador pionero en IA aplicada",
-            image: "images/MJ.png",
-            description:
-              "Investigador líder en algoritmos de IA aplicada a optimización industrial. Mario impulsa la innovación tecnológica de Aetherix, desarrollando soluciones de vanguardia que establecen nuevos estándares en la industria.",
-            expertise: [
-              { icon: "fas fa-brain", text: "Algoritmos de IA" },
-              { icon: "fas fa-flask", text: "Investigación Aplicada" },
-              { icon: "fas fa-industry", text: "Optimización Industrial" },
-            ],
-            achievements: [
-              "Más de 15 publicaciones en revistas científicas especializadas",
-              "Desarrollo de 8 patentes en algoritmos de IA",
-              "PhD en Ciencias de la Computación con especialización en IA",
-            ],
-            socialLinks: {
-              linkedin: "https://www.linkedin.com/in/mario-jara-8951581b8/",
-            },
-          },
-        };
-
-        // Function to create modal content
-        function createModalContent(leaderData) {
-          return `
-            <div class="modal-header">
-              <div class="modal-avatar">
-                <img src="${leaderData.image}" alt="${leaderData.name}" />
-              </div>
-              <div class="modal-name">${leaderData.name}</div>
-              <div class="modal-title">${leaderData.title}</div>
-              <div class="modal-subtitle">${leaderData.subtitle}</div>
-            </div>
-
-            <div class="modal-description">
-              ${leaderData.description}
-            </div>
-
-            <div class="expertise-section">
-              <h4>Áreas de Expertise</h4>
-              <div class="expertise-grid">
-                ${leaderData.expertise
-                  .map(
-                    (item) => `
-                  <div class="expertise-item">
-                    <i class="${item.icon}"></i>
-                    <span>${item.text}</span>
-                  </div>
-                `
-                  )
-                  .join("")}
-              </div>
-            </div>
-
-            <div class="achievements-section">
-              <h4>Logros Destacados</h4>
-              <ul class="achievements-list">
-                ${leaderData.achievements
-                  .map(
-                    (achievement) => `
-                  <li>${achievement}</li>
-                `
-                  )
-                  .join("")}
-              </ul>
-            </div>
-
-            <div class="modal-linkedin">
-              <a href="${
-                leaderData.socialLinks.linkedin
-              }" class="linkedin-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin-in"></i>
-                <span>Conectar en LinkedIn</span>
-              </a>
-            </div>
-          `;
-        }
-
-        // Function to open modal
-        function openModal(leaderId) {
-          const leaderData = leadersData[leaderId];
-          if (leaderData) {
-            modalBody.innerHTML = createModalContent(leaderData);
-            leaderModal.classList.add("active");
-            document.body.style.overflow = "hidden";
-
-            // Add smooth entrance animation
-            setTimeout(() => {
-              leaderModal.style.opacity = "1";
-            }, 10);
-          }
-        }
-
-        // Function to close modal
-        function closeModal() {
-          leaderModal.style.opacity = "0";
-          setTimeout(() => {
-            leaderModal.classList.remove("active");
-            document.body.style.overflow = "";
-          }, 300);
-        }
-
-        // Event listeners for leader cards
-        clickableLeaders.forEach((leader) => {
-          leader.addEventListener("click", function () {
-            const leaderId = this.getAttribute("data-leader");
-            openModal(leaderId);
-          });
-
-          // Enhanced hover effect - Optimized for performance
-          leader.addEventListener("mouseenter", function () {
-            this.style.transition =
-              "transform 150ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 150ms cubic-bezier(0.2, 0.8, 0.2, 1)";
-            this.style.transform = "translateY(-8px) scale(1.02)";
-            this.style.boxShadow = "0 15px 40px rgba(16, 35, 42, 0.15)";
-          });
-
-          leader.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0) scale(1)";
-            this.style.boxShadow = "";
-          });
-        });
-
-        // Event listeners for modal close
-        modalClose.addEventListener("click", closeModal);
-        modalBackdrop.addEventListener("click", closeModal);
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && leaderModal.classList.contains("active")) {
-            closeModal();
-          }
-        });
-
-        // Prevent modal close when clicking inside modal content
-        leaderModal
-          .querySelector(".modal-content")
-          .addEventListener("click", function (e) {
-            e.stopPropagation();
-          });
-      });
-    </script>
+    <script src="js/index.js"></script>
   </body>
 </html>
