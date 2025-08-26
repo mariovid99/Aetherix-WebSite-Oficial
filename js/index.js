@@ -91,7 +91,7 @@ const translations = {
 
         // Hero Section
         "hero-title":
-            'Transformamos tu negocio con <span style="color: var(--brand-green);">Inteligencia Artificial</span>',
+            'IA que transforma datos en decisiones y resultados',
         "hero-subtitle":
             "Soluciones de IA empresarial que impulsan el crecimiento, optimizan procesos y generan valor real para tu organización",
         "hero-cta-primary": "Agendar Demo Gratuita",
@@ -243,9 +243,9 @@ const translations = {
 
         // Hero Section
         "hero-title":
-            'Transform your business with <span style="color: var(--brand-green);">Artificial Intelligence</span>',
+            'AI that transforms data into decisions and results',
         "hero-subtitle":
-            "Enterprise AI solutions that drive growth, optimize processes and generate real value for your organization",
+            "We deploy AI and analytics solutions that reduce failures, automate processes, and enhance your operations.",
         "hero-cta-primary": "Schedule Free Demo",
         "hero-cta-secondary": "View Services",
         "hero-badge-1": "Industry 4.0",
