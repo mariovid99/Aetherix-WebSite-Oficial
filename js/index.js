@@ -226,11 +226,75 @@ const translations = {
         "footer-privacy": "Política de privacidad",
         "footer-description":
             "Transformando el futuro empresarial con Inteligencia Artificial avanzada.",
-        "footer-services-title": "Servicios",
+        "footer-services-title": "Contenido",
         "footer-company-title": "Empresa",
         "footer-contact-title": "Contacto",
+        "footer-legal-title": "Legal",
+        "footer-terms": "Términos y Condiciones",
         "footer-rights":
             "© 2024 Aetherix AI Solutions. Todos los derechos reservados.",
+
+        // Privacy Policy
+        "privacy-title": "Aviso de Privacidad",
+        "privacy-subtitle": "Conoce cómo protegemos y manejamos tus datos personales conforme a la legislación mexicana vigente",
+        
+        "privacy-section-1-title": "Responsable del Tratamiento de Datos Personales",
+        "privacy-section-1-p1": "AETHERIX AI SOLUTIONS, con domicilio en la Ciudad Monterrey en la entidad de Nuevo León, México, y portal de internet aetherix.mx es responsable del uso y protección de sus datos personales en términos de lo establecido por el artículo 3º fracción XVI de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) ",
+        
+        "privacy-contact-title": "Datos de contacto del responsable:",
+        "privacy-contact-company": "Razón Social:",
+        "privacy-contact-address": "Domicilio:",
+        "privacy-contact-email": "Correo electrónico:",
+        "privacy-contact-phone": "Teléfono:",
+        
+        "privacy-section-2-title": "Finalidad de Tratamiento de sus Datos Personales",
+        "privacy-section-2-p1": "Los datos personales generales, financieros, patrimoniales, que recabemos de forma personal, directa e indirecta dependiendo de la relación jurídica que se llegase a entablar entre Usted y AETHERIX AI SOLUTIONS, los utilizaremos para las siguientes finalidades, que son necesarias para el servicio que solicita: ",
+        "privacy-section-2-subtitle-1": "Finalidades Primarias (necesarias para la prestación del servicio):",
+        "privacy-section-2-subtitle-2": "Finalidades Secundarias (no necesarias para la prestación del servicio, pero que permiten una mejor experiencia):",
+
+        "privacy-data-1": "Proveer los servicios y productos relacionados con desarrollo de software, análisis de datos, modelos predictivos.",
+        "privacy-data-2": "Gestionar, procesar, dar seguimiento, actualizar y validar la información que nos proporciona para la operación de los servicios.",
+        "privacy-data-3": "Para proveer, mantener y actualizar nuestro sitio web.",
+        "privacy-data-4": "Enviar invitaciones a clientes y prospectos para participar en nuestros eventos electrónicos y presenciales.",
+        "privacy-data-5": "Enviar invitaciones a clientes y prospectos para enviarles promociones, información que les puede interesar sobre nuestros servicios.",
+        "privacy-data-6": "Facturación y cobro de los servicios.",
+        "privacy-data-7": "Pago a proveedores.",
+        "privacy-data-8": "Dar cumplimiento a obligaciones contractuales y legales.",
+        "privacy-data-9": "Envío de comunicaciones de marketing, promociones y ofertas.",
+        "privacy-data-10": "Análisis de uso para la mejora de nuestros productos y servicios.",
+        "privacy-data-11": "Elaboración de perfiles de usuario para personalizar la experiencia.",
+        "privacy-section-3-title": "Datos Personales, Financieros y Patrimoniales que utilizaremos para estos fines",
+
+        "privacy-purpose-1": "Datos de identificación: Nombre completo, dirección, teléfono, correo electrónico.",
+        "privacy-purpose-2": "Datos laborales: Empresa, puesto, dirección laboral.",
+        "privacy-purpose-3": "Datos patrimoniales o financieros: Datos bancarios (si es necesario para la facturación).",
+        "privacy-purpose-4": "Datos de uso de la plataforma o servicio: Información técnica, como dirección IP, tipo de navegador, sistema operativo, patrones de uso e interacción con nuestros modelos de IA.",
+        
+        "privacy-section-4-title": "Transferencia de Datos Personales",
+        "privacy-section-4-p1": "Dependiendo de la relación jurídica que exista entre usted y AETHERIX AI SOLUTIONS., sus datos podrán compartirse con terceros ajenos a nuestra empresa para las siguientes finalidades:",
+        "privacy-section-4-p2": "En el caso de transferencias que requieran su consentimiento, este será solicitado de manera expresa.",
+
+        "privacy-transfer-1": "A proveedores de servicios que nos apoyan en la operación (por ejemplo, servicios de nube, analítica).",
+        "privacy-transfer-2": "A autoridades competentes, en caso de que exista un requerimiento legal.",
+        
+        "privacy-section-5-title": "¿Cómo puede acceder, rectificar o cancelar sus datos personales, u oponerse a su uso? (ARCO) ",
+        "privacy-section-5-p1": "Conforme a lo señalado en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada adecuadamente (Cancelación); así como oponerse al uso de sus datos personales para fines específicos (Oposición). Estos derechos se conocen como derechos ARCO. ",
+        "privacy-section-5-subtitle-1": "Para ejercer cualquiera de los derechos ARCO, usted deberá:",
+        "privacy-section-5-subtitle-2": "Revocación del consentimiento:",
+        "privacy-section-5-p3": "Usted puede revocar su consentimiento para el uso de sus datos personales enviando un correo electrónico a info@aetherix.mx. Su solicitud deberá incluir la misma información requerida para el ejercicio de los derechos ARCO.",
+        
+        "privacy-arco-1": "Presentar la solicitud vía correo electrónico a: info@aetherix.mx",
+        "privacy-arco-2": "Proporcionar su nombre completo y medio para comunicarle la respuesta",
+        "privacy-arco-3": "Acompañar los documentos que acrediten su identidad",
+        "privacy-arco-4": "Describir de manera clara y precisa los datos personales respecto de los que busca ejercer alguno de los derechos ARCO",
+        "privacy-arco-5": "Cualquier otro elemento que propicie la localización de los datos personales",
+        
+        "privacy-section-6-title": "Medios para limitar el uso o divulgación de datos personales",
+        "privacy-section-6-p1": "En caso de que no se desea seguir recibiendo comunicados o publicidad por parte de AETHERIX AI SOLUTIONS, usted podrá enviar en todo momento, un correo electrónico a info@aetherix.mx solicitando dejar de ser contactado para esos fines.",
+
+        "privacy-section-7-title": "¿Cómo puede conocer los cambios en este aviso de privacidad?",
+        "privacy-section-7-p1": "El presente aviso de privacidad está vigente desde el 06 de mayo de 2025 y puede sufrir modificaciones, cambios o actualizaciones derivadas de nuevos requerimientos legales; de nuestras propias necesidades por los servicios que ofrecemos; de nuestras prácticas de privacidad; de cambios en nuestro modelo de negocio, o por otras causas.",
+        "privacy-section-7-p2": "Cualquier modificación al mismo será comunicada por el responsable mediante la publicación del nuevo Aviso de Privacidad, en la página de internet aetherix.mx",
     },
     en: {
         // Navbar
@@ -384,10 +448,75 @@ const translations = {
         "footer-privacy": "Privacy policy",
         "footer-description":
             "Transforming the business future with advanced Artificial Intelligence.",
-        "footer-services-title": "Services",
+        "footer-services-title": "Content",
         "footer-company-title": "Company",
         "footer-contact-title": "Contact",
+        "footer-legal-title": "Legal",
+        "footer-terms": "Terms and Conditions",
         "footer-rights": "© 2024 Aetherix AI Solutions. All rights reserved.",
+
+        // Privacy Policy
+        "privacy-title": "Privacy Notice",
+        "privacy-subtitle": "Learn how we protect and handle your personal data in accordance with current Mexican legislation",
+        
+        "privacy-section-1-title": "Personal Data Processing Controller",
+        "privacy-section-1-p1": "AETHERIX AI SOLUTIONS, domiciled in Monterrey City in the state of Nuevo León, Mexico, and internet portal aetherix.mx is responsible for the use and protection of your personal data in terms of what is established by article 3rd section XVI of the Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP)",
+        
+        "privacy-contact-title": "Controller contact information:",
+        "privacy-contact-company": "Company Name:",
+        "privacy-contact-address": "Address:",
+        "privacy-contact-email": "Email:",
+        "privacy-contact-phone": "Phone:",
+        
+        "privacy-section-2-title": "Purpose of Processing Your Personal Data",
+        "privacy-section-2-p1": "The general, financial, patrimonial personal data that we collect personally, directly and indirectly depending on the legal relationship that may be established between You and AETHERIX AI SOLUTIONS, we will use for the following purposes, which are necessary for the service you request:",
+        "privacy-section-2-subtitle-1": "Primary Purposes (necessary for service provision):",
+        "privacy-section-2-subtitle-2": "Secondary Purposes (not necessary for service provision, but allow for a better experience):",
+
+        "privacy-data-1": "Provide services and products related to software development, data analysis, predictive models.",
+        "privacy-data-2": "Manage, process, follow up, update and validate the information you provide for service operations.",
+        "privacy-data-3": "To provide, maintain and update our website.",
+        "privacy-data-4": "Send invitations to clients and prospects to participate in our electronic and in-person events.",
+        "privacy-data-5": "Send invitations to clients and prospects to send them promotions, information that may interest them about our services.",
+        "privacy-data-6": "Billing and collection of services.",
+        "privacy-data-7": "Payment to suppliers.",
+        "privacy-data-8": "Comply with contractual and legal obligations.",
+        "privacy-data-9": "Sending marketing communications, promotions and offers.",
+        "privacy-data-10": "Usage analysis for improving our products and services.",
+        "privacy-data-11": "Development of user profiles to personalize the experience.",
+        
+        "privacy-section-3-title": "Personal, Financial and Patrimonial Data we will use for these purposes",
+
+        "privacy-purpose-1": "Identification data: Full name, address, phone, email.",
+        "privacy-purpose-2": "Work data: Company, position, work address.",
+        "privacy-purpose-3": "Patrimonial or financial data: Banking data (if necessary for billing).",
+        "privacy-purpose-4": "Platform or service usage data: Technical information, such as IP address, browser type, operating system, usage patterns and interaction with our AI models.",
+        
+        "privacy-section-4-title": "Personal Data Transfer",
+        "privacy-section-4-p1": "Depending on the legal relationship that exists between you and AETHERIX AI SOLUTIONS, your data may be shared with third parties outside our company for the following purposes:",
+        "privacy-section-4-p2": "In the case of transfers that require your consent, this will be requested expressly.",
+
+        "privacy-transfer-1": "To service providers that support us in operations (for example, cloud services, analytics).",
+        "privacy-transfer-2": "To competent authorities, in case there is a legal requirement.",
+        
+        "privacy-section-5-title": "How can you access, rectify or cancel your personal data, or oppose its use? (ARCO)",
+        "privacy-section-5-p1": "In accordance with what is stated in the Federal Law on Protection of Personal Data Held by Private Parties, you have the right to know what personal data we have about you, what we use it for and the conditions of use we give it (Access). Likewise, it is your right to request the correction of your personal information in case it is outdated, inaccurate or incomplete (Rectification); that we delete it from our records or databases when you consider that it is not being used properly (Cancellation); as well as oppose the use of your personal data for specific purposes (Opposition). These rights are known as ARCO rights.",
+        "privacy-section-5-subtitle-1": "To exercise any of the ARCO rights, you must:",
+        "privacy-section-5-subtitle-2": "Consent revocation:",
+        "privacy-section-5-p3": "You can revoke your consent for the use of your personal data by sending an email to info@aetherix.mx. Your request must include the same information required for exercising ARCO rights.",
+        
+        "privacy-arco-1": "Submit the request via email to: info@aetherix.mx",
+        "privacy-arco-2": "Provide your full name and means to communicate the response",
+        "privacy-arco-3": "Attach documents that prove your identity",
+        "privacy-arco-4": "Clearly and precisely describe the personal data regarding which you seek to exercise any of the ARCO rights",
+        "privacy-arco-5": "Any other element that facilitates the location of personal data",
+        
+        "privacy-section-6-title": "Means to limit the use or disclosure of personal data",
+        "privacy-section-6-p1": "In case you do not wish to continue receiving communications or advertising from AETHERIX AI SOLUTIONS, you may send at any time, an email to info@aetherix.mx requesting to stop being contacted for those purposes.",
+
+        "privacy-section-7-title": "How can you learn about changes to this privacy notice?",
+        "privacy-section-7-p1": "This privacy notice is in effect since May 6, 2025 and may undergo modifications, changes or updates arising from new legal requirements; from our own needs for the services we offer; from our privacy practices; from changes in our business model, or from other causes.",
+        "privacy-section-7-p2": "Any modification to it will be communicated by the controller through the publication of the new Privacy Notice, on our website.",
     },
 };
 
@@ -421,13 +550,15 @@ const leadersDataTranslations = {
                 { icon: "fas fa-robot", text: "Automatización con RPA e IA" },
                 { icon: "fas fa-chart-line", text: "Analítica y Toma de Decisiones" },
                 { icon: "fas fa-eye", text: "Visión Artificial aplicada a Negocios" },
+                { icon: "fas fa-brain", text: "Aplicaciones de Software con IA" },
+                { icon: "fas fa-cloud", text: "Herramientas y Soluciones en la Nube" }
             ],
             achievements: [
-                "Automatización de procesos críticos con RPA, reduciendo tiempos operativos de forma significativa",
+                "Automatización de procesos críticos con RPA e IA, reduciendo tiempos operativos de forma significativa",
                 "Desarrollo de sistemas de analítica para optimizar producción y decisiones de contenido",
-                "Diseño de soluciones de tracking en exposiciones para medir afluencia y comportamiento de visitantes con precisión",
-                "Aplicación de mantenimiento predictivo con IA, logrando importantes reducciones en costos operativos",
-                "Creación de un sistema de control de EPP con visión artificial, garantizando seguridad laboral y cumplimiento normativo en tiempo real",
+                "Elemento fundamental para impulsar la generación de negocios entre empresas extranjeras y mexicanas a través de juntas B2B en ferias comerciales.",
+                "Creación e implementación de sistemas de gestión de software personalizados, desarrollados desde cero con resultados exitosos en los sectores educativo, servicios y comerciales.",
+                "Liderazgo en el desarrollo e implementación de soluciones de inteligencia artificial para la captura y análisis de datos, orientadas al sector de la comunicación.",
             ],
             expertiseTitle: "Áreas de Expertise",
             achievementsTitle: "Logros Destacados",
@@ -452,18 +583,27 @@ const leadersDataTranslations = {
             linkedinText: "Conectar en LinkedIn"
         },
         "mario-jara": {
-            title: "Director de I+D (R&D)",
-            subtitle: "Investigador pionero en IA aplicada",
-            description: "Investigador líder en algoritmos de IA aplicada a optimización industrial. Mario impulsa la innovación tecnológica de Aetherix, desarrollando soluciones de vanguardia que establecen nuevos estándares en la industria.",
-            expertise: [
-                { icon: "fas fa-brain", text: "Algoritmos de IA" },
-                { icon: "fas fa-flask", text: "Investigación Aplicada" },
-                { icon: "fas fa-industry", text: "Optimización Industrial" },
+            "name": "Mario Jara",
+            "title": "Director de I+D (R&D)",
+            "subtitle": "Investigador pionero en IA aplicada y astrofísica",
+            "image": "images/MJ.png",
+            "description":
+                "Investigador y emprendedor con experiencia en inteligencia artificial, astrofísica y ciencia de datos. Director de I+D en Aetherix, impulsando soluciones tecnológicas en mantenimiento predictivo, optimización industrial y análisis de datos complejos. Su trabajo integra métodos de aprendizaje automático, optimización bayesiana y redes dinámicas aplicadas a problemas científicos e industriales.",
+            "expertise": [
+                { "icon": "fas fa-brain", "text": "Algoritmos de IA y Machine Learning" },
+                { "icon": "fas fa-rocket", "text": "Astrofísica y Óptica Adaptativa" },
+                { "icon": "fas fa-industry", "text": "Optimización Industrial y Predictiva" },
+                { "icon": "fas fa-project-diagram", "text": "Modelos de Optimización Bayesiana" },
+                { "icon": "fas fa-chart-line", "text": "Estadística y Análisis de Datos" },
+                { "icon": "fas fa-image", "text": "Tratamiento y Procesamiento de Imágenes" }
             ],
-            achievements: [
-                "Más de 15 publicaciones en revistas científicas especializadas",
-                "Desarrollo de 8 patentes en algoritmos de IA",
-                "PhD en Ciencias de la Computación con especialización en IA",
+            "achievements": [
+                "Diseño de dashboards de monitoreo en tiempo real que optimizaron inventarios y operaciones en más de 200 puntos de control",
+                "Desarrollo de modelos predictivos de demanda con una reducción del 12% en sobreproducción",
+                "Automatización de reportes de negocio que redujo los tiempos de análisis de varios días a minutos",
+                "Publicación de un artículo científico internacional en el área de inteligencia artificial aplicada a sistemas ópticos",
+                "Implementación de algoritmos de optimización bayesiana para la calibración de aberraciones ópticas en proyectos de investigación astrofísica",
+                "Procesamiento avanzado de imágenes que mejoró la resolución y calidad de datos en aplicaciones científicas"
             ],
             expertiseTitle: "Áreas de Expertise",
             achievementsTitle: "Logros Destacados",
@@ -490,21 +630,23 @@ const leadersDataTranslations = {
             linkedinText: "Connect on LinkedIn"
         },
         "mario-vidana": {
-            title: "Optimization and Analytics Specialist with AI",
+            title: "Specialist in Optimization and AI-Driven Analytics",
             subtitle: "Transforming decisions and operations with artificial intelligence",
-            description: "Professional with experience in optimizing administrative, operational, and production processes. Mario has led automation projects, advanced analytics, and computer vision, applying artificial intelligence to generate efficiencies, reduce costs, and enhance strategic decision-making across different industries.",
+            description: "Professional with experience in optimizing administrative, operational, and production processes. Mario has led projects in automation, advanced analytics, and computer vision, applying artificial intelligence to generate efficiencies, reduce costs, and enhance strategic decision-making across different industries.",
             expertise: [
                 { icon: "fas fa-cogs", text: "Process Optimization" },
-                { icon: "fas fa-robot", text: "RPA and AI Automation" },
-                { icon: "fas fa-chart-line", text: "Analytics and Decision Making" },
+                { icon: "fas fa-robot", text: "Automation with RPA and AI" },
+                { icon: "fas fa-chart-line", text: "Analytics and Decision-Making" },
                 { icon: "fas fa-eye", text: "Computer Vision for Business" },
+                { icon: "fas fa-brain", text: "AI-Powered Software Applications" },
+                { icon: "fas fa-cloud", text: "Cloud Tools and Solutions" }
             ],
             achievements: [
-                "Automation of critical processes with RPA, significantly reducing operational times",
-                "Development of analytics systems to optimize production and content decisions",
-                "Design of tracking solutions at exhibitions to precisely measure attendance and visitor behavior",
-                "Application of predictive maintenance with AI, achieving significant reductions in operational costs",
-                "Creation of a PPE control system with computer vision, ensuring workplace safety and regulatory compliance in real-time",
+                "Automation of critical processes with RPA and AI, significantly reducing operational time",
+                "Development of analytics systems to optimize production and content-related decisions",
+                "Key contributor in driving business generation between foreign and Mexican companies through B2B meetings at trade fairs",
+                "Design and implementation of custom-built management software systems, successfully deployed in the education, services, and commercial sectors",
+                "Leadership in the development and implementation of artificial intelligence solutions for data capture and analysis in the communications industry"
             ],
             expertiseTitle: "Areas of Expertise",
             achievementsTitle: "Key Achievements",
@@ -529,22 +671,31 @@ const leadersDataTranslations = {
             linkedinText: "Connect on LinkedIn"
         },
         "mario-jara": {
-            title: "R&D Director (R&D)",
-            subtitle: "Pioneer researcher in applied AI",
-            description: "Leading researcher in AI algorithms applied to industrial optimization. Mario drives Aetherix's technological innovation, developing cutting-edge solutions that set new industry standards.",
-            expertise: [
-                { icon: "fas fa-brain", text: "AI Algorithms" },
-                { icon: "fas fa-flask", text: "Applied Research" },
-                { icon: "fas fa-industry", text: "Industrial Optimization" },
+            "name": "Mario Jara",
+            "title": "R&D Director (R&D)",
+            "subtitle": "Pioneer researcher in applied AI and astrophysics",
+            "image": "images/MJ.png",
+            "description":
+                "Researcher and entrepreneur with experience in artificial intelligence, astrophysics and data science. R&D Director at Aetherix, driving technological solutions in predictive maintenance, industrial optimization and complex data analysis. His work integrates machine learning methods, Bayesian optimization and dynamic networks applied to scientific and industrial problems.",
+            "expertise": [
+                { "icon": "fas fa-brain", "text": "AI Algorithms and Machine Learning" },
+                { "icon": "fas fa-rocket", "text": "Astrophysics and Adaptive Optics" },
+                { "icon": "fas fa-industry", "text": "Industrial and Predictive Optimization" },
+                { "icon": "fas fa-project-diagram", "text": "Bayesian Optimization Models" },
+                { "icon": "fas fa-chart-line", "text": "Statistics and Data Analysis" },
+                { "icon": "fas fa-image", "text": "Image Treatment and Processing" }
             ],
-            achievements: [
-                "Over 15 publications in specialized scientific journals",
-                "Development of 8 patents in AI algorithms",
-                "PhD in Computer Science with specialization in AI",
+            "achievements": [
+                "Design of real-time monitoring dashboards that optimized inventories and operations in more than 200 control points",
+                "Development of demand predictive models with a 12% reduction in overproduction",
+                "Business report automation that reduced analysis times from several days to minutes",
+                "Publication of an international scientific article in the area of artificial intelligence applied to optical systems",
+                "Implementation of Bayesian optimization algorithms for optical aberration calibration in astrophysics research projects",
+                "Advanced image processing that improved resolution and data quality in scientific applications"
             ],
-            expertiseTitle: "Areas of Expertise",
-            achievementsTitle: "Key Achievements",
-            linkedinText: "Connect on LinkedIn"
+            "expertiseTitle": "Areas of Expertise",
+            "achievementsTitle": "Key Achievements",
+            "linkedinText": "Connect on LinkedIn"
         },
     },
 };
