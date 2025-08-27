@@ -49,11 +49,76 @@ const contactForm = document.getElementById("contactForm");
 if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        // Aquí iría la lógica de envío del formulario
-        alert(
-            "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto."
-        );
-        contactForm.reset();
+        
+        // Mostrar loading
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        // Obtener los datos del formulario
+        const formData = {
+            from_name: document.getElementById('name').value,
+            company: document.getElementById('company').value,
+            reply_to: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            interest_area: document.getElementById('interest').value,
+            message: document.getElementById('message').value,
+            send_date: new Date().toLocaleDateString('es-MX', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            })
+        };
+        
+        // Enviar email usando EmailJS
+        emailjs.send('service_n7mhofp', 'template_yb47hxu', formData)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
+                // Mostrar mensaje de éxito
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                submitBtn.style.background = '#22c55e';
+                
+                // Mostrar alerta de éxito
+                const successMessage = currentLanguage === 'es' 
+                    ? '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.'
+                    : 'Thank you for your message! We will contact you soon.';
+                
+                alert(successMessage);
+                
+                // Resetear formulario
+                contactForm.reset();
+                
+                // Restaurar botón después de 3 segundos
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+                
+            }, function(error) {
+                console.log('FAILED...', error);
+                
+                // Mostrar mensaje de error
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+                submitBtn.style.background = '#ef4444';
+                
+                const errorMessage = currentLanguage === 'es'
+                    ? 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos directamente por WhatsApp.'
+                    : 'There was an error sending the message. Please try again or contact us directly via WhatsApp.';
+                
+                alert(errorMessage);
+                
+                // Restaurar botón después de 3 segundos
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
     });
 }
 
@@ -862,6 +927,9 @@ function translatePage(lang) {
 
 // Initialize language system
 document.addEventListener("DOMContentLoaded", function () {
+    // Initialize EmailJS
+    emailjs.init("RQnEKohalUXT8Qkws"); // Reemplaza con tu Public Key de EmailJS
+    
     // Check for saved language preference
     const savedLang = localStorage.getItem("preferredLanguage") || "es";
 
