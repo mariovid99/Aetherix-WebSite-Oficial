@@ -528,15 +528,18 @@ const leadersDataTranslations = {
             subtitle: "Visionaria en transformación digital e innovación",
             description: "Lydia Martínez combina más de 25 años de experiencia en gestión de talento, tecnologías emergentes y liderazgo de proyectos internacionales. Como CEO, impulsa la transformación digital con un enfoque estratégico, humano y de innovación constante.",
             expertise: [
-                { icon: "fas fa-lightbulb", text: "Estrategia e Innovación" },
-                { icon: "fas fa-users", text: "Gestión de Talento" },
-                { icon: "fas fa-globe", text: "Proyectos Internacionales" },
+                { icon: "fas fa-industry", text: "Tecnologías Industria 4.0" },
+                { icon: "fas fa-chess", text: "Estrategia de Negocio" },
+                { icon: "fas fa-project-diagram", text: "Liderazgo de Proyectos & Equipos" },
+                { icon: "fas fa-handshake", text: "Enfoque en el Cliente" },
             ],
             achievements: [
-                "Liderazgo en múltiples proyectos de transformación digital y talento humano",
-                "Liderazgo en la Implementación de Tecnologías Emergentes (Blockchain)",
-                "Gestión de proyectos estratégicos para empresas globales",
+                "Liderazgo en la implementación de tecnologías (ERP-Odoo, Blockchain).",
+                "Liderazgo en la transformación de procesos de talento humano colaborando con equipos de USA, Asia y Europa.",
+                "Liderazgo de proyectos estratégicos para empresas globales.",
+                "Certificaciones en entrenamientos de IA para ventas, Blockchain, habilidades de facilitación y entrevistas por competencia."
             ],
+
             expertiseTitle: "Áreas de Expertise",
             achievementsTitle: "Logros Destacados",
             linkedinText: "Conectar en LinkedIn"
@@ -616,14 +619,16 @@ const leadersDataTranslations = {
             subtitle: "Visionary in digital transformation and innovation",
             description: "Lydia Martínez combines over 25 years of experience in talent management, emerging technologies, and international project leadership. As CEO, she drives digital transformation with a strategic, human-centered, and constantly innovative approach.",
             expertise: [
-                { icon: "fas fa-lightbulb", text: "Strategy and Innovation" },
-                { icon: "fas fa-users", text: "Talent Management" },
-                { icon: "fas fa-globe", text: "International Projects" },
+                { icon: "fas fa-industry", text: "Industry 4.0 Technologies" },
+                { icon: "fas fa-chess", text: "Business Strategy" },
+                { icon: "fas fa-project-diagram", text: "Project & Team Leadership" },
+                { icon: "fas fa-handshake", text: "Customer Focus" },
             ],
             achievements: [
-                "Leadership in multiple digital transformation and human talent projects",
-                "Leadership in Emerging Technologies Implementation (Blockchain)",
-                "Strategic project management for global companies",
+                "Leadership in the implementation of technologies (ERP-Odoo, Blockchain).",
+                "Leadership in human talent process transformation, collaborating with teams in the USA, Asia, and Europe.",
+                "Leadership of strategic projects for global companies.",
+                "Certifications in AI for Sales, Blockchain, Facilitation Skills, and Competency-Based Interviewing."
             ],
             expertiseTitle: "Areas of Expertise",
             achievementsTitle: "Key Achievements",
