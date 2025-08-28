@@ -364,7 +364,7 @@ const translations = {
     en: {
         // Navbar
         "nav-inicio": "Home",
-        "nav-nosotros": "About",
+        "nav-nosotros": "About Us",
         "nav-servicios": "Services",
         "nav-casos": "Presentation",
         "nav-investigacion": "Research",
@@ -597,6 +597,7 @@ const leadersDataTranslations = {
                 { icon: "fas fa-chess", text: "Estrategia de Negocio" },
                 { icon: "fas fa-project-diagram", text: "Liderazgo de Proyectos & Equipos" },
                 { icon: "fas fa-handshake", text: "Enfoque en el Cliente" },
+                { icon: "fas fa-sync-alt", text: "Metodología Ágil" },
             ],
             achievements: [
                 "Liderazgo en la implementación de tecnologías (ERP-Odoo, Blockchain).",
@@ -688,6 +689,7 @@ const leadersDataTranslations = {
                 { icon: "fas fa-chess", text: "Business Strategy" },
                 { icon: "fas fa-project-diagram", text: "Project & Team Leadership" },
                 { icon: "fas fa-handshake", text: "Customer Focus" },
+                { icon: "fas fa-sync-alt", text: "Agile Development" },
             ],
             achievements: [
                 "Leadership in the implementation of technologies (ERP-Odoo, Blockchain).",

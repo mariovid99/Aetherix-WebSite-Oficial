@@ -1268,13 +1268,21 @@ a:hover {
         padding: 4rem 0;
     }
 
-    /* Ocultar botones de WhatsApp, Agendar demo y Contáctanos en móvil */
+    /* Ocultar solo botones específicos de navegación en móvil, NO el botón del formulario */
     .sticky-cta,
-    .btn-primary[href*="contacto"],
-    .btn-primary[href*="Agendar"],
-    .btn.btn-primary,
-    .whatsapp-btn {
+    .nav-cta .btn-primary,
+    .hero-cta .btn-primary,
+    .cta-section .btn-gradient {
         display: none !important;
+    }
+
+    /* Asegurar que el botón del formulario se mantenga visible y responsive */
+    .contact-form .btn-primary {
+        display: inline-flex !important;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 
     .nav-links {
@@ -1369,18 +1377,51 @@ a:hover {
         width: 100%;
     }
 
-    /* En dispositivos muy pequeños, usar gradiente en lugar de video para mejor rendimiento */
-    .hero-video {
+    /* Mejorar formulario de contacto en móviles */
+    .contact-form .btn-primary {
+        width: 100% !important;
+        padding: 1.2rem 2rem !important;
+        font-size: 1.1rem !important;
+        margin-top: 1.5rem !important;
+        border-radius: 12px !important;
+    }
+
+    .form-control {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    .form-group {
+        margin-bottom: 1.8rem !important;
+    }
+
+    .form-check {
+        margin-bottom: 2rem !important;
+    }
+
+    /* PRUEBA: Mostrar video en dispositivos móviles para evaluar rendimiento y estética */
+    /* Comentamos temporalmente la regla que oculta el video */
+    /* .hero-video {
         display: none;
+    } */
+
+    /* Mantener video visible pero optimizado para móviles */
+    .hero-video {
+        display: block;
+        object-fit: cover;
+        /* Asegurar que el video cubra toda la pantalla correctamente */
     }
 
     .hero {
+        /* Mantener gradiente como fallback si el video no carga */
         background: var(--gradient-hero);
     }
 
     .hero-overlay {
-        background: rgba(8, 2, 234, 0.3);
-        /* Overlay más sutil sin video */
+        /* Overlay más fuerte en móvil para mantener legibilidad del texto sobre video */
+        background: rgba(8, 2, 234, 0.6);
+        /* Incrementamos la opacidad para mejor contraste en pantallas pequeñas */
     }
 
     .props-grid,
