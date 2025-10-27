@@ -601,6 +601,213 @@ a:hover {
     box-shadow: var(--shadow-card);
 }
 
+/* Certifications Section */
+.certifications {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%);
+    border-top: 1px solid rgba(16, 35, 42, 0.08);
+    border-bottom: 1px solid rgba(16, 35, 42, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background pattern */
+.certifications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(28, 224, 128, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(8, 2, 234, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 70%, rgba(89, 23, 210, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.certification-badge {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: 100%;
+    max-width: 240px;
+    position: relative;
+}
+
+.certification-badge:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.certification-badge:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.certification-badge.appear {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.badge-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 
+        0 8px 32px rgba(16, 35, 42, 0.08),
+        0 2px 8px rgba(16, 35, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 2px solid rgba(16, 35, 42, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient border on hover */
+.badge-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-brand);
+    border-radius: 22px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.badge-container:hover::before {
+    opacity: 1;
+}
+
+.badge-container:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 20px 60px rgba(16, 35, 42, 0.15),
+        0 8px 24px rgba(16, 35, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: transparent;
+}
+
+/* Floating particles effect */
+.badge-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(28, 224, 128, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.badge-container:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.certification-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0.95) contrast(1.05) saturate(1.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.certification-image:hover {
+    filter: brightness(1.05) contrast(1.15) saturate(1.2);
+    transform: scale(1.08);
+}
+
+/* Pulse animation for badges */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 
+            0 8px 32px rgba(16, 35, 42, 0.08),
+            0 2px 8px rgba(16, 35, 42, 0.04),
+            0 0 0 0 rgba(28, 224, 128, 0);
+    }
+    50% {
+        box-shadow: 
+            0 8px 32px rgba(16, 35, 42, 0.08),
+            0 2px 8px rgba(16, 35, 42, 0.04),
+            0 0 0 8px rgba(28, 224, 128, 0.1);
+    }
+}
+
+.certification-badge.appear .badge-container {
+    animation: pulse-glow 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* Responsive Design para Certifications */
+@media (max-width: 768px) {
+    .certifications {
+        padding: 4rem 0;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 280px;
+    }
+    
+    .badge-container {
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+    
+    .badge-container::before {
+        border-radius: 20px;
+    }
+    
+    .badge-container:hover {
+        transform: translateY(-6px) scale(1.03);
+    }
+}
+
+@media (max-width: 576px) {
+    .certifications {
+        padding: 3rem 0;
+    }
+    
+    .certifications-grid {
+        gap: 2.5rem;
+        max-width: 240px;
+    }
+    
+    .badge-container {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .badge-container::before {
+        border-radius: 18px;
+    }
+}
+
 /* Team */
 .team-grid {
     display: grid;
