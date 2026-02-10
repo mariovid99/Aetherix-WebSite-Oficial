@@ -177,21 +177,21 @@ const translations = {
         // Services Section
         "services-title": "Nuestros Servicios",
         "services-subtitle": "Soluciones integrales de IA para tu empresa",
-        "service-1-title": "IA a la Medida",
+        "service-1-title": "Talleres IA",
         "service-1-desc":
-            "Desarrollamos soluciones de inteligencia artificial personalizadas que se adaptan perfectamente a las necesidades específicas de tu negocio.",
-        "service-2-title": "Automatización de Procesos",
+            "Realizamos talleres personalizados de inteligencia artificial para capacitar a tu equipo en las últimas tecnologías y metodologías del sector.",
+        "service-2-title": "Aetherix Event Motion",
         "service-2-desc":
-            "Optimizamos y automatizamos tus procesos empresariales utilizando tecnologías de IA avanzadas para maximizar la eficiencia operacional.",
-        "service-3-title": "Mantenimiento Predictivo",
+            "Convertimos eventos masivos en datos accionables, identificando las zonas más visitadas de tu expo para maximizar el impacto de patrocinadores y ayudar a expositores a elegir el mejor lugar para su stand.",
+        "service-3-title": "Aetherix Aura",
         "service-3-desc":
-            "Implementamos sistemas de mantenimiento predictivo que utilizan IA para prevenir fallas y optimizar el rendimiento de tus equipos.",
-        "service-4-title": "EPP Intelligence",
+            "Convertimos el conocimiento y los datos de tu empresa en respuestas claras, ayudando a tu equipo a consultar procesos, capacitarse y tomar decisiones inmediatas con el apoyo de un analista inteligente.",
+        "service-4-title": "ChronoLine",
         "service-4-desc":
-            "Sistemas inteligentes de monitoreo y gestión de equipos de protección personal para garantizar la seguridad laboral.",
-        "service-5-title": "HR Analytics Suite",
+            "Convertimos procesos manuales en datos accionables, midiendo automáticamente los tiempos entre cada etapa por operador para optimizar la productividad y detectar cuellos de botella.",
+        "service-5-title": "Agentes AI",
         "service-5-desc":
-            "Plataforma integral de análisis de recursos humanos que utiliza IA para optimizar la gestión del talento y mejorar la experiencia del empleado.",
+            "Agentes de inteligencia artificial personalizados que automatizan tareas repetitivas y mejoran la eficiencia operativa de tu empresa.",
 
         //Investigation Section
         "innovation-tag": "Innovación",
@@ -199,7 +199,7 @@ const translations = {
         "dynamic-network-methodology-description":
             "Desarrollada por el M. en C. Mario Alberto Jara Reyna, nuestra metodología patentada logra mejoras de hasta 90% en precisión y velocidad de calibración óptica con IA.",
         "dynamic-network-methodology-description-2":
-            "Esta tecnología revolucionaria aplicada a mantenimiento predictivo en tiempo real permite detectar anomalías con una precisión sin precedentes, reduciendo falsos positivos y maximizando la disponibilidad de activos críticos.",
+            "Esta tecnología revolucionaria aplicada a la calibración de telescopios permite agilizar el proceso para ajustar el telescopio de manera ágil y eficiente.",
         "explore-research": "Explorar investigación",
 
         // Leadership Section
@@ -225,7 +225,7 @@ const translations = {
         "contact-demo": "Agendar Demo",
         "contact-info": "Información de Contacto",
         "contact-address": "Monterrey, Nuevo León, México",
-        "contact-phone": "+52 811 066 6514",
+        "contact-phone": "+52 812 900 4053",
         "contact-phone-tag": "Teléfono",
         "contact-email": "info@aetherix.mx",
         "contact-team-location":
@@ -393,21 +393,21 @@ const translations = {
         // Services Section
         "services-title": "Our Services",
         "services-subtitle": "Comprehensive AI solutions for your business",
-        "service-1-title": "Custom AI",
+        "service-1-title": "AI Workshops",
         "service-1-desc":
-            "We develop personalized artificial intelligence solutions that perfectly adapt to your business specific needs.",
-        "service-2-title": "Process Automation",
+            "We conduct personalized artificial intelligence workshops to train your team in the latest technologies and methodologies in the sector.",
+        "service-2-title": "Aetherix Event Motion",
         "service-2-desc":
-            "We optimize and automate your business processes using advanced AI technologies to maximize operational efficiency.",
-        "service-3-title": "Predictive Maintenance",
+            "We turn large-scale events into actionable data, identifying the most visited areas of your expo to maximize sponsor impact and help exhibitors choose the ideal location for their booths.",
+        "service-3-title": "Aetherix Aura",
         "service-3-desc":
-            "We implement predictive maintenance systems that use AI to prevent failures and optimize your equipment performance.",
-        "service-4-title": "PPE Intelligence",
+            "We turn your company’s knowledge and data into clear answers, helping your team consult processes, learn faster, and make immediate decisions with the support of an intelligent analyst.",
+        "service-4-title": "ChronoLine",
         "service-4-desc":
-            "Intelligent monitoring and management systems for personal protective equipment to ensure workplace safety.",
-        "service-5-title": "HR Analytics Suite",
+            "We turn manual processes into actionable data by automatically measuring time between each stage per operator to optimize productivity and identify bottlenecks.",
+        "service-5-title": "Agentic AI",
         "service-5-desc":
-            "Comprehensive human resources analytics platform that uses AI to optimize talent management and improve employee experience.",
+            "Personalized artificial intelligence agents that automate repetitive tasks and improve your company's operational efficiency.",
 
         //Investigation Section
         "innovation-tag": "Innovation",
@@ -415,7 +415,7 @@ const translations = {
         "dynamic-network-methodology-description":
             "Developed by M.Sc. Mario Alberto Jara Reyna, our patented methodology achieves improvements of up to 90% in precision and speed of optical calibration with AI.",
         "dynamic-network-methodology-description-2":
-            "This revolutionary technology applied to real-time predictive maintenance allows detecting anomalies with unprecedented precision, reducing false positives and maximizing the availability of critical assets.",
+            "This revolutionary technology applied to telescope calibration enables streamlining the process to adjust the telescope in an agile and efficient manner.",
         "explore-research": "Explore research",
 
         // Leadership Section
@@ -441,7 +441,7 @@ const translations = {
         "contact-demo": "Schedule Demo",
         "contact-info": "Contact Information",
         "contact-address": "Monterrey, Nuevo León, México",
-        "contact-phone": "+52 811 066 6514",
+        "contact-phone": "+52 812 900 4053",
         "contact-email": "info@aetherix.mx",
         "contact-phone-tag": "Phone",
         "contact-team-location":
@@ -615,19 +615,17 @@ const leadersDataTranslations = {
         "mario-vidana": {
             title: "Especialista en Optimización y Analítica con IA",
             subtitle: "Transformando decisiones y operaciones con inteligencia artificial",
-            description: "Profesional con experiencia en optimización de procesos administrativos, operativos y de producción. Mario ha liderado proyectos de automatización, analítica avanzada y visión por computadora, aplicando inteligencia artificial para generar eficiencias, reducir costos y potenciar la toma de decisiones estratégicas en diferentes industrias.",
+            description: "Estratega en optimización operativa y despliegue de IA. Como COO de nueva generación, Mario diseña soluciones de analítica predictiva y visión artificial que redefinen la eficiencia en producción y administración. Su enfoque potencia el capital humano mediante herramientas inteligentes, asegurando decisiones precisas y un crecimiento operativo exponencial.",
             expertise: [
-                { icon: "fas fa-cogs", text: "Optimización de Procesos" },
-                { icon: "fas fa-robot", text: "Automatización con RPA e IA" },
-                { icon: "fas fa-chart-line", text: "Analítica y Toma de Decisiones" },
-                { icon: "fas fa-eye", text: "Visión Artificial aplicada a Negocios" },
-                { icon: "fas fa-brain", text: "Aplicaciones de Software con IA" },
-                { icon: "fas fa-cloud", text: "Herramientas y Soluciones en la Nube" }
+                { icon: "fas fa-project-diagram", text: "Arquitectura de Operaciones con IA" },
+                { icon: "fas fa-cloud", text: "Cloud Computing" },
+                { icon: "fas fa-robot", text: "RPA" },
+                { icon: "fas fa-eye", text: "Visión Computacional y Analítica Predictiva" },
+                { icon: "fas fa-database", text: "Data Pipelines y Escalabilidad" },
+                { icon: "fas fa-server", text: "Arquitecturas AIOPs y MLOps" }
             ],
             achievements: [
-                "Automatización de procesos críticos con RPA e IA, reduciendo tiempos operativos de forma significativa",
                 "Desarrollo de sistemas de analítica para optimizar producción y decisiones de contenido",
-                "Elemento fundamental para impulsar la generación de negocios entre empresas extranjeras y mexicanas a través de juntas B2B en ferias comerciales.",
                 "Creación e implementación de sistemas de gestión de software personalizados, desarrollados desde cero con resultados exitosos en los sectores educativo, servicios y comerciales.",
                 "Liderazgo en el desarrollo e implementación de soluciones de inteligencia artificial para la captura y análisis de datos, orientadas al sector de la comunicación.",
             ],
@@ -711,19 +709,17 @@ const leadersDataTranslations = {
         "mario-vidana": {
             title: "Specialist in Optimization and AI-Driven Analytics",
             subtitle: "Transforming decisions and operations with artificial intelligence",
-            description: "Professional with experience in optimizing administrative, operational, and production processes. Mario has led projects in automation, advanced analytics, and computer vision, applying artificial intelligence to generate efficiencies, reduce costs, and enhance strategic decision-making across different industries.",
+            description: "Strategist in operational optimization and AI deployment. As a new generation COO, Mario designs predictive analytics and computer vision solutions that redefine efficiency in production and administration. His approach empowers human capital through intelligent tools, ensuring precise decisions and exponential operational growth.",
             expertise: [
-                { icon: "fas fa-cogs", text: "Process Optimization" },
-                { icon: "fas fa-robot", text: "Automation with RPA and AI" },
-                { icon: "fas fa-chart-line", text: "Analytics and Decision-Making" },
-                { icon: "fas fa-eye", text: "Computer Vision for Business" },
-                { icon: "fas fa-brain", text: "AI-Powered Software Applications" },
-                { icon: "fas fa-cloud", text: "Cloud Tools and Solutions" }
+                { icon: "fas fa-project-diagram", text: "AI Operations Architecture" },
+                { icon: "fas fa-cloud", text: "Cloud Computing" },
+                { icon: "fas fa-robot", text: "RPA" },
+                { icon: "fas fa-eye", text: "Computer Vision and Predictive Analytics" },
+                { icon: "fas fa-database", text: "Data Pipelines and Scalability" },
+                { icon: "fas fa-server", text: "AIOps and MLOps Architectures" }
             ],
             achievements: [
-                "Automation of critical processes with RPA and AI, significantly reducing operational time",
                 "Development of analytics systems to optimize production and content-related decisions",
-                "Key contributor in driving business generation between foreign and Mexican companies through B2B meetings at trade fairs",
                 "Design and implementation of custom-built management software systems, successfully deployed in the education, services, and commercial sectors",
                 "Leadership in the development and implementation of artificial intelligence solutions for data capture and analysis in the communications industry"
             ],

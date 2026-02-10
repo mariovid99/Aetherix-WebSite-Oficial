@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Event Motion - Sistema de análisis de flujo de personas en eventos y exposiciones usando IA"
+    />
+    <title>Event Motion | Aetherix AI Solutions</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aetherix.mx/Event-Motion" />
+    <meta
+      property="og:title"
+      content="Event Motion | Análisis de Flujo en Eventos"
+    />
+    <meta
+      property="og:description"
+      content="Sistema inteligente de análisis de flujo de personas en exposiciones y eventos masivos."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/01_Aetherix_Simoblo-Verde.png"
+    />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      .service-hero {
+        background: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
+        padding: 8rem 0 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.4;
+      }
+
+      .service-hero-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .service-hero h1 {
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-hero h1::after {
+        background: var(--brand-mint);
+      }
+
+      .service-hero .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.35rem;
+        line-height: 1.7;
+      }
+
+      .service-details {
+        padding: 4rem 0;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-item {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        transition: var(--transition-base);
+      }
+
+      .feature-item p {
+        text-align: justify;
+      }
+
+      .feature-item h3 {
+        text-align: center;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-card);
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--gradient-brand);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem auto;
+      }
+
+      .feature-icon i {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .video-section {
+        background: var(--bg-soft);
+        padding: 4rem 0;
+      }
+
+      .video-container {
+        max-width: 900px;
+        margin: 0 auto;
+        aspect-ratio: 16/9;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(16, 35, 42, 0.15);
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      .case-study {
+        padding: 4rem 0;
+      }
+
+      .case-study-header {
+        background: linear-gradient(135deg, #10232a 0%, #2a4550 100%);
+        color: white;
+        padding: 3rem;
+        border-radius: 20px 20px 0 0;
+        margin-bottom: 0;
+      }
+
+      .case-study-header h3 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .case-study-content {
+        background: white;
+        border-radius: 0 0 20px 20px;
+        box-shadow: var(--shadow-card);
+        overflow: hidden;
+      }
+
+      .case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 0;
+      }
+
+      .case-item {
+        padding: 3rem;
+      }
+
+      .case-item h3 {
+        text-align: center;
+      }
+
+      .case-item p {
+        text-align: justify;
+      }
+
+      .case-item img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 8px 24px rgba(16, 35, 42, 0.12);
+      }
+
+      .chart-container {
+        position: relative;
+        height: 400px;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(16, 35, 42, 0.08);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .stat-card {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--brand-blue);
+        font-family: var(--font-heading);
+      }
+
+      .stat-label {
+        color: var(--brand-slate);
+        font-weight: 500;
+        margin-top: 0.5rem;
+      }
+
+      .cta-banner {
+        background: var(--gradient-brand);
+        padding: 4rem 2rem;
+        border-radius: 24px;
+        text-align: center;
+        margin: 4rem 0;
+        color: white;
+      }
+
+      .cta-banner h2 {
+        color: white;
+      }
+
+      .cta-banner h2::after {
+        display: none;
+      }
+
+      .benefits-section {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .benefit-card {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--brand-mint);
+        transition: var(--transition-base);
+      }
+
+      .benefit-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(16, 35, 42, 0.12);
+      }
+
+      .benefit-card h4 {
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .benefit-card p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-brand);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-icon i {
+        color: white;
+        font-size: 1.3rem;
+      }
+
+      .process-section {
+        background: var(--gradient-brand);
+        padding: 5rem 0;
+        color: white;
+      }
+
+      .process-section h2 {
+        color: white;
+      }
+
+      .process-section h2::after {
+        background: var(--brand-mint);
+      }
+
+      .process-section .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .process-step {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        transition: var(--transition-base);
+      }
+
+      .process-step:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-8px);
+      }
+
+      .process-number {
+        width: 60px;
+        height: 60px;
+        background: var(--brand-mint);
+        color: var(--brand-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 auto 1.5rem auto;
+        font-family: var(--font-heading);
+      }
+
+      .process-step h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .process-step p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .service-hero {
+          padding: 6rem 0 3rem 0;
+        }
+
+        .case-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .chart-container {
+          height: 300px;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img
+            src="images/01_Aetherix_Full-Logo.png"
+            alt="Aetherix AI Solutions"
+            width="200"
+            height="42"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#servicios" class="active">Servicios</a>
+          <a href="index.html#casos">Presentación</a>
+          <a href="index.html#investigacion">Investigación</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="index.html#contacto" class="btn btn-primary">Contáctanos</a>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <div class="service-hero-content">
+          <div
+            class="chip"
+            style="
+              background: rgba(28, 224, 128, 0.2);
+              color: var(--brand-mint);
+              border: none;
+            "
+          >
+            <i class="fas fa-users-viewfinder" style="margin-right: 0.5rem"></i>
+            Event Motion
+          </div>
+          <h1>Aetherix Event Motion</h1>
+          <p class="text-lead">
+            Transformamos eventos masivos en datos accionables mediante
+            inteligencia artificial avanzada. Identificamos zonas de mayor
+            tráfico, patrones de movimiento y comportamiento de asistentes para
+            maximizar el ROI de patrocinadores y optimizar la experiencia del
+            evento.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Cómo funciona Event Motion?</h2>
+          <p class="text-lead">
+            Instalamos nuestras cámaras y las convertimos en sensores
+            inteligentes que miden el flujo, la permanencia y las zonas de mayor
+            interés de sus asistentes, transformando video en decisiones
+            rentables.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3>Detección Precisa</h3>
+            <p>
+              Sistema de cámaras con IA que detecta y rastrea el movimiento de
+              personas con alta precisión.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Mapas de Calor</h3>
+            <p>
+              Visualización de zonas con mayor concentración de personas,
+              identificando áreas de alto tráfico y puntos de interés durante el
+              evento por día y hora.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Análisis Dinámico</h3>
+            <p>
+              Gráficas y reportes detallados sobre el flujo de personas por hora
+              y día, permitiendo optimizar horarios y recursos del evento.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Privacidad Absoluta</h3>
+            <p>
+              Nuestra tecnología detecta siluetas y patrones de movimiento,
+              nunca rasgos faciales. Los registros se procesan temporalmente
+              para generar métricas estadísticas y se eliminan definitivamente
+              tras el análisis, asegurando un flujo de datos 100% anónimo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Conoce Event Motion en Acción</h2>
+          <p class="text-lead">
+            Descubre cómo nuestra tecnología transforma eventos en experiencias
+            basadas en datos
+          </p>
+        </div>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/sTGgbzESFhQ?start=1"
+            title="Event Motion Demo"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Beneficios Tangibles para tu Evento</h2>
+          <p class="text-lead">
+            Event Motion no solo cuenta personas, transforma tu evento en una
+            experiencia inteligente
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h4>Maximiza el ROI de Patrocinadores</h4>
+            <p>
+              Demuestra el valor real de los espacios con datos concretos de
+              tráfico y exposición. Presenta reportes profesionales que
+              justifican inversiones y abren oportunidades para incrementar
+              patrocinios en futuros eventos.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <h4>Optimiza el Diseño del Espacio</h4>
+            <p>
+              Identifica zonas subutilizadas y redistribuye estratégicamente
+              stands y activaciones. Mejora la circulación de visitantes y
+              asegura que cada área del evento reciba la atención que merece.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Decisiones Basadas en Datos</h4>
+            <p>
+              Elimina suposiciones sobre qué funcionó y qué no. Cada decisión
+              para futuros eventos estará respaldada por información real y
+              verificable que demuestra resultados medibles.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h4>Planificación de Futuros Eventos</h4>
+            <p>
+              Aprende de cada evento con datos históricos precisos. Compara
+              ediciones, identifica tendencias y mejora continuamente la
+              experiencia basándote en información real de comportamiento de
+              asistentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Cómo Funciona Event Motion?</h2>
+          <p class="text-lead">
+            Implementación simple, resultados extraordinarios
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step fade-in">
+            <div class="process-number">1</div>
+            <h4>Instalación Estratégica</h4>
+            <p>
+              Colocamos cámaras en puntos clave del evento. Instalación rápida
+              que se adapta perfectamente a tu infraestructura sin interferir
+              con el montaje del evento.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">2</div>
+            <h4>Configuración de Zonas</h4>
+            <p>
+              Definimos las áreas de interés: entradas, pasillos, dinámicas,
+              zonas de patrocinios. El sistema se calibra para detectar y
+              analizar el flujo específico de cada espacio así como acciones
+              visuales clave.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">3</div>
+            <h4>Captura Continua</h4>
+            <p>
+              Durante todo el evento, las cámaras registran el movimiento de
+              personas de forma continua. La IA procesa toda esta información
+              para generar un análisis completo y detallado.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">4</div>
+            <h4>Entrega de Resultados</h4>
+            <p>
+              Unos días después del evento, recibes reportes completos con mapas
+              de calor, gráficas de flujo, estadísticas de asistencia y análisis
+              detallado listo para compartir con patrocinadores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study -->
+
+    <!-- CTA Banner -->
+    <section class="container">
+      <div class="cta-banner">
+        <h2>¿Listo para transformar tu próximo evento?</h2>
+        <p
+          class="text-lead"
+          style="color: rgba(255, 255, 255, 0.95); margin-bottom: 2rem"
+        >
+          Agenda una demo personalizada y descubre cómo Event Motion puede
+          maximizar el valor de tus eventos y exposiciones.
+        </p>
+        <a href="index.html#contacto" class="btn btn-white">
+          <i class="fas fa-calendar-alt" style="margin-right: 0.5rem"></i>
+          Agendar Demo Ahora
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- LOGO FOOTER: REEMPLAZAR CON SVG/PNG REAL -->
+            <img
+              src="images/07_Aetherix_Blanco.png"
+              alt="Aetherix AI Solutions"
+              class="footer-logo"
+              width="200"
+              height="42"
+            />
+            <p data-translate="footer-description">
+              Transformando el futuro empresarial con Inteligencia Artificial
+              avanzada.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/company/aetherix-ai/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/61580192949194/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/aetherixaisolutions/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading" data-translate="footer-services-title">
+              Servicios
+            </h4>
+            <div class="footer-links">
+              <a href="#inicio" data-translate="nav-inicio">Inicio</a>
+              <a href="#nosotros" data-translate="nav-nosotros">Nosotros</a>
+              <a href="#servicios" data-translate="nav-servicios">Servicios</a>
+              <a href="#casos" data-translate="nav-casos">Presentación</a>
+              <a href="#investigacion" data-translate="nav-investigacion"
+                >Investigación</a
+              >
+              <a href="#contacto" data-translate="footer-contact">Contacto</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading" data-translate="footer-legal-title">
+              Legal
+            </h4>
+            <div class="footer-links">
+              <a href="aviso-privacidad.html" data-translate="footer-privacy"
+                >Aviso de Privacidad</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p data-translate="footer-rights">
+            © 2025 Aetherix AI Solutions. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chart Script -->
+    <script>
+      // Fade-in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Talleres de IA - Capacitación empresarial en Inteligencia Artificial y digitalización con Aetherix"
+    />
+    <title>Talleres de IA | Aetherix AI Solutions</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aetherix.mx/talleres-ia" />
+    <meta
+      property="og:title"
+      content="Talleres de IA | Capacitación Empresarial en Inteligencia Artificial"
+    />
+    <meta
+      property="og:description"
+      content="Capacita a tu equipo en IA y digitalización. Aprende a identificar oportunidades y aprovechar la tecnología para hacer tu negocio más productivo."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/01_Aetherix_Simoblo-Verde.png"
+    />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      .service-hero {
+        background: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
+        padding: 8rem 0 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.4;
+      }
+
+      .service-hero-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .service-hero h1 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 3.5rem;
+      }
+
+      .service-hero h1::after {
+        background: var(--brand-mint);
+      }
+
+      .service-hero .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.4rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-stat {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--brand-mint);
+        font-family: var(--font-heading);
+        display: block;
+      }
+
+      .hero-stat-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+      }
+
+      .service-details {
+        padding: 5rem 0;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .feature-item {
+        background: var(--bg-soft);
+        padding: 2.5rem;
+        border-radius: 20px;
+        transition: var(--transition-base);
+        border: 2px solid transparent;
+      }
+
+      .feature-item p {
+        text-align: justify;
+        line-height: 1.7;
+      }
+
+      .feature-item h3 {
+        text-align: center;
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(16, 35, 42, 0.15);
+        border-color: var(--brand-mint);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--gradient-brand);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem auto;
+        box-shadow: 0 8px 24px rgba(8, 2, 234, 0.3);
+      }
+
+      .feature-icon i {
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .showcase-section {
+        background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        padding: 5rem 0;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+
+      .showcase-item {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(16, 35, 42, 0.1);
+      }
+
+      .showcase-item h3 {
+        color: var(--brand-blue);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .showcase-item p {
+        text-align: justify;
+        line-height: 1.7;
+        color: var(--brand-slate);
+        margin-bottom: 1.5rem;
+      }
+
+      .showcase-image {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(16, 35, 42, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .showcase-image:hover {
+        transform: scale(1.03);
+      }
+
+      .image-caption {
+        text-align: center;
+        color: var(--brand-slate);
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        font-style: italic;
+      }
+
+      .benefits-section {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .benefit-card {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--brand-mint);
+        transition: var(--transition-base);
+      }
+
+      .benefit-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(16, 35, 42, 0.12);
+      }
+
+      .benefit-card h4 {
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .benefit-card p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-brand);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-icon i {
+        color: white;
+        font-size: 1.3rem;
+      }
+
+      .process-section {
+        background: var(--gradient-brand);
+        padding: 5rem 0;
+        color: white;
+      }
+
+      .process-section h2 {
+        color: white;
+      }
+
+      .process-section h2::after {
+        background: var(--brand-mint);
+      }
+
+      .process-section .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .process-step {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        transition: var(--transition-base);
+      }
+
+      .process-step:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-8px);
+      }
+
+      .process-number {
+        width: 60px;
+        height: 60px;
+        background: var(--brand-mint);
+        color: var(--brand-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 auto 1.5rem auto;
+        font-family: var(--font-heading);
+      }
+
+      .process-step h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .process-step p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+      }
+
+      .use-cases-section {
+        background: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .use-cases-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+
+      .use-cases-section .section-header {
+        position: relative;
+        z-index: 1;
+      }
+
+      .use-cases-section h2 {
+        color: white;
+      }
+
+      .use-cases-section h2::after {
+        background: var(--brand-mint);
+      }
+
+      .use-cases-section .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .industries-container {
+        position: relative;
+        z-index: 1;
+        max-width: 1000px;
+        margin: 3rem auto 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        justify-items: center;
+      }
+
+      .industry-badge {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 1.2rem 2rem;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.3s ease;
+        cursor: default;
+        width: 100%;
+        max-width: 320px;
+        min-height: 70px;
+      }
+
+      .industry-badge:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: var(--brand-mint);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .industry-icon {
+        width: 45px;
+        height: 45px;
+        background: var(--brand-mint);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .industry-icon i {
+        color: var(--brand-blue);
+        font-size: 1.3rem;
+      }
+
+      .industry-name {
+        color: white;
+        font-weight: 600;
+        font-size: 1.05rem;
+        line-height: 1.3;
+        flex: 1;
+      }
+
+      .cta-banner {
+        background: var(--gradient-brand);
+        padding: 5rem 2rem;
+        border-radius: 24px;
+        text-align: center;
+        margin: 4rem 0;
+        color: white;
+      }
+
+      .cta-banner h2 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-banner h2::after {
+        display: none;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #1ce080 0%, #0ed977 100%);
+        padding: 3rem;
+        border-radius: 20px;
+        margin: 3rem 0;
+        color: white;
+        text-align: center;
+      }
+
+      .highlight-box h3 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .highlight-box p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+      }
+
+      .success-story {
+        background: white;
+        padding: 4rem;
+        border-radius: 24px;
+        margin: 4rem 0;
+        box-shadow: 0 10px 40px rgba(16, 35, 42, 0.1);
+        border-top: 5px solid var(--brand-mint);
+      }
+
+      .success-story-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .success-story h3 {
+        color: var(--brand-blue);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .success-story h3::after {
+        display: none;
+      }
+
+      .success-story-subtitle {
+        color: var(--brand-mint);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .success-content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+        margin-bottom: 3rem;
+      }
+
+      .success-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-align: justify;
+        color: var(--brand-slate);
+        margin-bottom: 1.5rem;
+      }
+
+      .success-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .success-image-wrapper {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: var(--bg-soft);
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--bg-soft);
+        transition: all 0.3s ease;
+      }
+
+      .success-image-wrapper:hover {
+        border-color: var(--brand-mint);
+        transform: scale(1.05);
+      }
+
+      .success-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .success-image-placeholder {
+        color: var(--brand-slate);
+        opacity: 0.5;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 2rem;
+      }
+
+      .success-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .success-stat {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        border-left: 4px solid var(--brand-mint);
+        transition: all 0.3s ease;
+      }
+
+      .success-stat:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(16, 35, 42, 0.1);
+      }
+
+      .success-stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--brand-mint);
+        font-family: var(--font-heading);
+      }
+
+      .success-stat-label {
+        font-size: 1rem;
+        color: var(--brand-slate);
+      }
+
+      @media (max-width: 968px) {
+        .service-hero {
+          padding: 6rem 0 3rem 0;
+        }
+
+        .service-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .showcase-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .use-cases-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .industries-container {
+          gap: 1rem;
+        }
+
+        .industry-badge {
+          padding: 1rem 1.5rem;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .industry-name {
+          font-size: 1rem;
+        }
+
+        .success-story {
+          padding: 2rem;
+        }
+
+        .success-content-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .success-images {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img
+            src="images/01_Aetherix_Full-Logo.png"
+            alt="Aetherix AI Solutions"
+            width="200"
+            height="42"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#servicios" class="active">Servicios</a>
+          <a href="index.html#casos">Presentación</a>
+          <a href="index.html#investigacion">Investigación</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="index.html#contacto" class="btn btn-primary">Contáctanos</a>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <div class="service-hero-content">
+          <div
+            class="chip"
+            style="
+              background: rgba(28, 224, 128, 0.2);
+              color: var(--brand-mint);
+              border: none;
+            "
+          >
+            <i
+              class="fas fa-chalkboard-teacher"
+              style="margin-right: 0.5rem"
+            ></i>
+            Talleres de IA
+          </div>
+          <h1>Talleres de Inteligencia Artificial</h1>
+          <p class="text-lead">
+            Capacita a tu equipo en las tecnologías que están transformando el
+            mundo empresarial. Nuestros talleres ayudan a las empresas a conocer
+            las herramientas de IA disponibles, capacitamos a su personal y
+            desarrollamos cursos especializados para fomentar el hábito de la
+            digitalización y aprovechar la Inteligencia Artificial en sus
+            procesos, haciéndolos más productivos y competitivos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Qué incluyen nuestros talleres?</h2>
+          <p class="text-lead">
+            Capacitación integral en IA adaptada a las necesidades de tu empresa
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-compass"></i>
+            </div>
+            <h3>Introducción al Ecosistema de IA</h3>
+            <p>
+              Descubre las tecnologías de Inteligencia Artificial disponibles
+              actualmente. Conoce las herramientas, plataformas y soluciones que
+              están transformando industrias completas. Entenderás qué es
+              posible hacer con IA, cómo funcionan los modelos de lenguaje,
+              visión computacional, automatización inteligente y análisis
+              predictivo, todo explicado de forma clara y práctica.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Capacitación de Personal</h3>
+            <p>
+              Entrenamos a tu equipo para que aprovechen las herramientas de IA
+              en su trabajo diario. Desde conceptos básicos hasta aplicaciones
+              avanzadas, nos aseguramos de que tu personal comprenda cómo
+              utilizar estas tecnologías de manera efectiva. Cada miembro del
+              equipo aprenderá a identificar oportunidades de automatización y
+              mejora en sus procesos específicos.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Identificación de Oportunidades</h3>
+            <p>
+              Trabajamos contigo para identificar áreas específicas en tu
+              negocio donde la IA puede generar impacto inmediato. Analizamos
+              tus procesos actuales, detectamos cuellos de botella y descubrimos
+              oportunidades de optimización. Te ayudamos a priorizar proyectos
+              según el retorno de inversión esperado y la facilidad de
+              implementación.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Cursos Especializados</h3>
+            <p>
+              Ofrecemos cursos diseñados específicamente para tu industria y
+              necesidades. Desde marketing digital con IA, automatización de
+              procesos administrativos, atención al cliente inteligente, hasta
+              análisis de datos y toma de decisiones. Cada curso combina teoría
+              con ejercicios prácticos utilizando casos reales de tu sector.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Desarrollo del Hábito Digital</h3>
+            <p>
+              No basta con conocer las herramientas, hay que adoptarlas.
+              Ayudamos a tu organización a desarrollar una cultura de
+              digitalización donde la IA se integre naturalmente en los flujos
+              de trabajo. Implementamos estrategias de cambio organizacional,
+              mejores prácticas y seguimiento continuo para garantizar la
+              adopción efectiva de las tecnologías.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Aumento de Productividad</h3>
+            <p>
+              El objetivo final es hacer tu empresa más productiva y
+              competitiva. Te mostramos cómo automatizar tareas repetitivas,
+              mejorar la eficiencia operativa, reducir errores humanos y liberar
+              tiempo valioso de tu equipo para que se enfoquen en actividades de
+              mayor valor. Medimos resultados y ajustamos estrategias para
+              maximizar el impacto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Talleres para Diferentes Industrias</h2>
+          <p class="text-lead">
+            Adaptamos nuestros talleres a las necesidades específicas de cada
+            sector
+          </p>
+        </div>
+
+        <div class="industries-container">
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-hotel"></i>
+            </div>
+            <span class="industry-name">Hotelería y Turismo</span>
+          </div>
+
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <span class="industry-name">Restaurantes y Alimentos</span>
+          </div>
+
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <span class="industry-name">Retail y Comercio</span>
+          </div>
+
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <span class="industry-name">Servicios Profesionales</span>
+          </div>
+
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <span class="industry-name">Manufactura e Industria</span>
+          </div>
+
+          <div class="industry-badge fade-in">
+            <div class="industry-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="industry-name">Educación y Capacitación</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Beneficios de Capacitarte en IA</h2>
+          <p class="text-lead">
+            Invierte en el futuro de tu empresa con conocimiento aplicable
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h4>Conocimiento Actualizado</h4>
+            <p>
+              Mantén a tu equipo al día con las últimas tendencias y
+              herramientas de Inteligencia Artificial. El mundo de la IA
+              evoluciona rápidamente, y nuestros talleres se actualizan
+              constantemente para incluir las tecnologías más recientes y
+              relevantes para tu industria.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h4>Retorno de Inversión Rápido</h4>
+            <p>
+              La capacitación en IA no es un gasto, es una inversión que genera
+              resultados medibles. Muchas de las herramientas que enseñamos son
+              de bajo costo o gratuitas, y pueden implementarse inmediatamente
+              para empezar a ver beneficios en productividad y eficiencia
+              operativa.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h4>Enfoque Práctico</h4>
+            <p>
+              No solo teoría: nuestros talleres son 100% prácticos y orientados
+              a la acción. Trabajamos con casos reales de tu industria,
+              ejercicios aplicables y herramientas que puedes usar desde el
+              primer día. Cada participante sale con un plan de implementación
+              concreto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Cómo Funcionan Nuestros Talleres?</h2>
+          <p class="text-lead">
+            Un proceso estructurado para maximizar el aprendizaje y la
+            aplicación
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step fade-in">
+            <div class="process-number">1</div>
+            <h4>Diagnóstico Inicial</h4>
+            <p>
+              Evaluamos las necesidades específicas de tu empresa y tu
+              industria. Identificamos el nivel de conocimiento actual de tu
+              equipo, los procesos que podrían beneficiarse de IA y los
+              objetivos que deseas alcanzar con la capacitación.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">2</div>
+            <h4>Taller Personalizado</h4>
+            <p>
+              Diseñamos un programa de capacitación adaptado a tu contexto.
+              Incluye introducción a tecnologías de IA, demostraciones en vivo
+              de herramientas relevantes para tu sector, ejercicios prácticos y
+              casos de estudio de tu industria.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">3</div>
+            <h4>Identificación de Oportunidades</h4>
+            <p>
+              Trabajamos en sesiones colaborativas para identificar áreas
+              específicas en tu negocio donde la IA puede generar impacto.
+              Priorizamos proyectos según viabilidad, retorno esperado y
+              recursos disponibles.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">4</div>
+            <h4>Plan de Implementación</h4>
+            <p>
+              Creamos un roadmap de adopción de IA para tu empresa. Definimos
+              pasos concretos, responsables, timelines y métricas de éxito. Tu
+              equipo termina el taller con un plan de acción claro y ejecutable
+              para empezar a implementar lo aprendido inmediatamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="container">
+      <div class="cta-banner fade-in">
+        <h2>Transforma tu Empresa con Inteligencia Artificial</h2>
+        <p
+          class="text-lead"
+          style="
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+          "
+        >
+          No te quedes atrás en la revolución de la IA
+        </p>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+          "
+        >
+          Agenda un taller para tu equipo y descubre cómo la Inteligencia
+          Artificial puede hacer tu negocio más productivo, eficiente y
+          competitivo
+        </p>
+        <div class="cta-buttons">
+          <a
+            href="index.html#contacto"
+            class="btn btn-white"
+            style="font-size: 1.1rem; padding: 1rem 2.5rem"
+          >
+            <i class="fas fa-calendar-check" style="margin-right: 0.75rem"></i>
+            Solicitar Taller
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- LOGO FOOTER: REEMPLAZAR CON SVG/PNG REAL -->
+            <img
+              src="images/07_Aetherix_Blanco.png"
+              alt="Aetherix AI Solutions"
+              class="footer-logo"
+              width="200"
+              height="42"
+            />
+            <p data-translate="footer-description">
+              Transformando el futuro empresarial con Inteligencia Artificial
+              avanzada.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/company/aetherix-ai/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/61580192949194/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/aetherixaisolutions/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading" data-translate="footer-services-title">
+              Servicios
+            </h4>
+            <div class="footer-links">
+              <a href="#inicio" data-translate="nav-inicio">Inicio</a>
+              <a href="#nosotros" data-translate="nav-nosotros">Nosotros</a>
+              <a href="#servicios" data-translate="nav-servicios">Servicios</a>
+              <a href="#casos" data-translate="nav-casos">Presentación</a>
+              <a href="#investigacion" data-translate="nav-investigacion"
+                >Investigación</a
+              >
+              <a href="#contacto" data-translate="footer-contact">Contacto</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading" data-translate="footer-legal-title">
+              Legal
+            </h4>
+            <div class="footer-links">
+              <a href="aviso-privacidad.html" data-translate="footer-privacy"
+                >Aviso de Privacidad</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p data-translate="footer-rights">
+            © 2025 Aetherix AI Solutions. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+      // Fade-in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

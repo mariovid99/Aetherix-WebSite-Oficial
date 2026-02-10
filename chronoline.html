@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ChronoLine - Sistema inteligente de medición de tiempos de producción usando visión artificial"
+    />
+    <title>ChronoLine | Aetherix AI Solutions</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aetherix.mx/ChronoLine" />
+    <meta
+      property="og:title"
+      content="ChronoLine | Control Inteligente de Producción"
+    />
+    <meta
+      property="og:description"
+      content="Optimiza tus procesos productivos con medición automática de tiempos usando inteligencia artificial."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/01_Aetherix_Simoblo-Verde.png"
+    />
+
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      .service-hero {
+        background: linear-gradient(135deg, #0802ea 0%, #5917d2 100%);
+        padding: 8rem 0 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.4;
+      }
+
+      .service-hero-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .service-hero h1 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 3.5rem;
+      }
+
+      .service-hero h1::after {
+        background: var(--brand-mint);
+      }
+
+      .service-hero .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.4rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-stat {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--brand-mint);
+        font-family: var(--font-heading);
+        display: block;
+      }
+
+      .hero-stat-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+      }
+
+      .service-details {
+        padding: 5rem 0;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .feature-item {
+        background: var(--bg-soft);
+        padding: 2.5rem;
+        border-radius: 20px;
+        transition: var(--transition-base);
+        border: 2px solid transparent;
+      }
+
+      .feature-item p {
+        text-align: justify;
+        line-height: 1.7;
+      }
+
+      .feature-item h3 {
+        text-align: center;
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(16, 35, 42, 0.15);
+        border-color: var(--brand-mint);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--gradient-brand);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem auto;
+        box-shadow: 0 8px 24px rgba(8, 2, 234, 0.3);
+      }
+
+      .feature-icon i {
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .showcase-section {
+        background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        padding: 5rem 0;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+
+      .showcase-item {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(16, 35, 42, 0.1);
+      }
+
+      .showcase-item h3 {
+        color: var(--brand-blue);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .showcase-item p {
+        text-align: justify;
+        line-height: 1.7;
+        color: var(--brand-slate);
+        margin-bottom: 1.5rem;
+      }
+
+      .showcase-image {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(16, 35, 42, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .showcase-image:hover {
+        transform: scale(1.03);
+      }
+
+      .image-caption {
+        text-align: center;
+        color: var(--brand-slate);
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        font-style: italic;
+      }
+
+      .benefits-section {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .benefit-card {
+        background: var(--bg-soft);
+        padding: 2rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--brand-mint);
+        transition: var(--transition-base);
+      }
+
+      .benefit-card:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(16, 35, 42, 0.12);
+      }
+
+      .benefit-card h4 {
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .benefit-card p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-brand);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-icon i {
+        color: white;
+        font-size: 1.3rem;
+      }
+
+      .process-section {
+        background: var(--gradient-brand);
+        padding: 5rem 0;
+        color: white;
+      }
+
+      .process-section h2 {
+        color: white;
+      }
+
+      .process-section h2::after {
+        background: var(--brand-mint);
+      }
+
+      .process-section .text-lead {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .process-step {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        transition: var(--transition-base);
+      }
+
+      .process-step:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-8px);
+      }
+
+      .process-number {
+        width: 60px;
+        height: 60px;
+        background: var(--brand-mint);
+        color: var(--brand-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0 auto 1.5rem auto;
+        font-family: var(--font-heading);
+      }
+
+      .process-step h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .process-step p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+      }
+
+      .dashboard-preview {
+        background: #f8f9fa;
+        padding: 5rem 0;
+      }
+
+      .dashboard-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(16, 35, 42, 0.15);
+        margin-top: 3rem;
+      }
+
+      .dashboard-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .metric-box {
+        background: linear-gradient(135deg, var(--brand-blue) 0%, #0802ea 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      .metric-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        font-family: var(--font-heading);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .metric-label {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .cta-banner {
+        background: var(--gradient-brand);
+        padding: 5rem 2rem;
+        border-radius: 24px;
+        text-align: center;
+        margin: 4rem 0;
+        color: white;
+      }
+
+      .cta-banner h2 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-banner h2::after {
+        display: none;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #1ce080 0%, #0ed977 100%);
+        padding: 3rem;
+        border-radius: 20px;
+        margin: 3rem 0;
+        color: white;
+        text-align: center;
+      }
+
+      .highlight-box h3 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .highlight-box p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 968px) {
+        .service-hero {
+          padding: 6rem 0 3rem 0;
+        }
+
+        .service-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .showcase-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container navbar-container">
+        <a href="index.html" class="navbar-logo">
+          <img
+            src="images/01_Aetherix_Full-Logo.png"
+            alt="Aetherix AI Solutions"
+            width="200"
+            height="42"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#servicios" class="active">Servicios</a>
+          <a href="index.html#casos">Presentación</a>
+          <a href="index.html#investigacion">Investigación</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="index.html#contacto" class="btn btn-primary">Contáctanos</a>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <div class="service-hero-content">
+          <div
+            class="chip"
+            style="
+              background: rgba(28, 224, 128, 0.2);
+              color: var(--brand-mint);
+              border: none;
+            "
+          >
+            <i class="fas fa-stopwatch" style="margin-right: 0.5rem"></i>
+            ChronoLine
+          </div>
+          <h1>Aetherix ChronoLine</h1>
+          <p class="text-lead">
+            Revoluciona tu producción con el poder de la inteligencia
+            artificial. Mide, analiza y optimiza cada segundo de tus procesos
+            productivos sin intervención manual. ChronoLine detecta
+            automáticamente cada operación, generando reportes precisos que
+            transforman datos en decisiones estratégicas para maximizar tu
+            eficiencia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Por qué ChronoLine?</h2>
+          <p class="text-lead">
+            Elimina la medición manual de tiempos y obtén datos precisos y
+            confiables que impulsan tu competitividad.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Detección Inteligente</h3>
+            <p>
+              Cada zona cuenta con una cámara equipada con inteligencia
+              artificial entrenada específicamente para reconocer sus procesos.
+              El sistema aprende y detecta automáticamente cada fase de trabajo,
+              desde el inicio hasta la finalización de cada tarea, sin necesidad
+              de botones ni cronómetros manuales.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Análisis en Tiempo Real</h3>
+            <p>
+              Visualiza instantáneamente el desempeño de tu línea de producción.
+              ChronoLine procesa miles de datos por segundo y los convierte en
+              información clara y accionable. Identifica cuellos de botella,
+              variaciones en tiempos y oportunidades de mejora al momento.
+            </p>
+          </div>
+
+          <div class="feature-item fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-dashboard"></i>
+            </div>
+            <h3>Dashboard Inteligente</h3>
+            <p>
+              Accede a un panel de control completo donde podrás consultar
+              tiempos por operador, turno, fecha, proceso o cualquier
+              combinación que necesites. Genera reportes personalizados, compara
+              rendimientos y toma decisiones basadas en datos reales, no en
+              suposiciones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase Section with Images -->
+    <!--
+    <section class="showcase-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>ChronoLine en Acción</h2>
+          <p class="text-lead">
+            Descubre cómo ChronoLine transforma tu piso de producción
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="showcase-item fade-in">
+            <h3>
+              <i
+                class="fas fa-brain"
+                style="color: var(--brand-mint); margin-right: 0.5rem"
+              ></i>
+              Inteligencia Artificial Monitoreando
+            </h3>
+            <p>
+              Observa cómo nuestra IA detecta y registra cada movimiento
+              productivo en tiempo real. El sistema identifica los patrones de
+              inicio y fin de cada proceso, ajustándose continuamente para
+              mejorar su precisión. Sin interferencias, sin distracciones, solo
+              datos puros y confiables.
+            </p>
+            <img
+              src="images/Example-chronoline.jpeg"
+              alt="IA de ChronoLine detectando procesos en línea de producción"
+              class="showcase-image"
+            />
+            <p class="image-caption">
+              La IA identifica automáticamente cada fase del proceso productivo
+            </p>
+          </div>
+
+          <div class="showcase-item fade-in">
+            <h3>
+              <i
+                class="fas fa-chart-line"
+                style="color: var(--brand-mint); margin-right: 0.5rem"
+              ></i>
+              Dashboard de Control Total
+            </h3>
+            <p>
+              Accede a información detallada de toda tu operación desde un solo
+              lugar. Filtra por operador, fecha, turno, proceso o estación.
+              Compara rendimientos, detecta tendencias y descubre oportunidades
+              de optimización que antes eran invisibles. Toda la inteligencia de
+              tu producción al alcance de un clic.
+            </p>
+            <img
+              src="images/chronoline-dashboard.jpg"
+              alt="Dashboard de ChronoLine mostrando métricas de producción"
+              class="showcase-image"
+            />
+            <p class="image-caption">
+              Visualiza todos tus datos de producción en tiempo real
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Beneficios Tangibles para tu Empresa</h2>
+          <p class="text-lead">
+            ChronoLine no solo mide tiempos, transforma tu operación completa
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-arrow-trend-up"></i>
+            </div>
+            <h4>Incrementa tu Productividad</h4>
+            <p>
+              Identifica procesos lentos y optimízalos. Mejora tu eficiencia
+              operativa al conocer exactamente dónde estás perdiendo tiempo
+              valioso.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h4>Reduce Costos Operativos</h4>
+            <p>
+              Elimina desperdicios de tiempo y recursos. Con datos precisos
+              puedes calcular costos reales de producción, optimizar asignación
+              de personal y reducir horas extra innecesarias.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h4>Decisiones Basadas en Datos</h4>
+            <p>
+              Deja atrás las suposiciones. Cada decisión estratégica estará
+              respaldada por información real y verificable. Presenta reportes
+              sólidos a dirección y demuestra el impacto de cada mejora.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>¿Cómo Funciona ChronoLine?</h2>
+          <p class="text-lead">
+            Implementación simple, resultados extraordinarios
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step fade-in">
+            <div class="process-number">1</div>
+            <h4>Instalación</h4>
+            <p>
+              Colocamos cámaras inteligentes en cada estación de trabajo.
+              Instalación rápida y no invasiva que se adapta a tu espacio actual
+              sin modificaciones mayores.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">2</div>
+            <h4>Entrenamiento de IA</h4>
+            <p>
+              Trabajamos junto con tu equipo de producción para entrenar el
+              sistema. Juntos definimos el inicio y fin de cada proceso,
+              enseñando a la IA a reconocer tus operaciones específicas. Una vez
+              entrenada, la IA identifica automáticamente cada fase de trabajo,
+              movimientos clave y transiciones entre tareas.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">3</div>
+            <h4>Detección Automática</h4>
+            <p>
+              Una vez activo, el sistema comienza a registrar automáticamente
+              cada proceso. Sin intervención humana, sin errores, con precisión
+              total las 24 horas del día.
+            </p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">4</div>
+            <h4>Análisis y Reportes</h4>
+            <p>
+              Accede a tu dashboard personalizado donde encontrarás todos los
+              datos organizados, visualizaciones claras y reportes listos para
+              compartir con tu equipo directivo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="dashboard-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tu Centro de Control Productivo</h2>
+          <p class="text-lead">
+            Toda la información que necesitas, organizada y lista para usar
+          </p>
+        </div>
+
+        <div class="dashboard-container fade-in">
+          <div class="dashboard-metrics">
+            <div class="metric-box">
+              <span class="metric-value">2,847</span>
+              <span class="metric-label">Procesos Registrados Hoy</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-value">98.5%</span>
+              <span class="metric-label">Eficiencia Promedio</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-value">45s</span>
+              <span class="metric-label">Tiempo Promedio por Unidad</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-value">24</span>
+              <span class="metric-label">Operadores Activos</span>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <h3>
+              <i class="fas fa-lightbulb" style="margin-right: 0.5rem"></i>
+              Información que Impulsa Resultados
+            </h3>
+            <p>
+              Con ChronoLine no solo obtienes números, obtienes inteligencia
+              aplicable. Cada métrica está diseñada para ayudarte a tomar
+              mejores decisiones, identificar oportunidades y demostrar el valor
+              de las mejoras implementadas. Desde resúmenes ejecutivos hasta
+              análisis detallados por operador, tendrás todo lo necesario para
+              llevar tu producción al siguiente nivel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="container">
+      <div class="cta-banner fade-in">
+        <h2>Transforma tu Producción Hoy Mismo</h2>
+        <p
+          class="text-lead"
+          style="
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+          "
+        >
+          Descubre cómo ChronoLine puede revolucionar tu operación
+        </p>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+          "
+        >
+          Agenda una demostración personalizada y recibe un análisis gratuito
+          del potencial de optimización en tu línea de producción
+        </p>
+        <div class="cta-buttons">
+          <a
+            href="index.html#contacto"
+            class="btn btn-white"
+            style="font-size: 1.1rem; padding: 1rem 2.5rem"
+          >
+            <i class="fas fa-calendar-check" style="margin-right: 0.75rem"></i>
+            Agendar Demo Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <!-- LOGO FOOTER: REEMPLAZAR CON SVG/PNG REAL -->
+            <img
+              src="images/07_Aetherix_Blanco.png"
+              alt="Aetherix AI Solutions"
+              class="footer-logo"
+              width="200"
+              height="42"
+            />
+            <p data-translate="footer-description">
+              Transformando el futuro empresarial con Inteligencia Artificial
+              avanzada.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/company/aetherix-ai/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/61580192949194/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/aetherixaisolutions/"
+                class="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading" data-translate="footer-services-title">
+              Servicios
+            </h4>
+            <div class="footer-links">
+              <a href="#inicio" data-translate="nav-inicio">Inicio</a>
+              <a href="#nosotros" data-translate="nav-nosotros">Nosotros</a>
+              <a href="#servicios" data-translate="nav-servicios">Servicios</a>
+              <a href="#casos" data-translate="nav-casos">Presentación</a>
+              <a href="#investigacion" data-translate="nav-investigacion"
+                >Investigación</a
+              >
+              <a href="#contacto" data-translate="footer-contact">Contacto</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-heading" data-translate="footer-legal-title">
+              Legal
+            </h4>
+            <div class="footer-links">
+              <a href="aviso-privacidad.html" data-translate="footer-privacy"
+                >Aviso de Privacidad</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p data-translate="footer-rights">
+            © 2025 Aetherix AI Solutions. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+      // Fade-in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
